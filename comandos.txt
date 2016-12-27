@@ -1,0 +1,34 @@
+#comandos ANGULAR CLI angular 2
+
+#instalar cli de angular
+npm install -g angular-cli
+
+# version cli
+ng --version
+
+# crear proyecto angular 2 
+ng new todo-app
+
+# levantar el servidor para visualizar el proyecto
+ng serve
+
+# crear clase y prueba unitaria
+ng generate class Todo --spec
+
+# revisar pruebas unitarias
+ng test
+
+# crear dataService
+ng generate service TodoData
+
+#install jquery 
+npm install jquery --save
+
+#install bootstrap
+npm install ng2-bootstrap bootstrap --save
+
+#install material 
+npm install --save @angular/material
+
+#install hammer
+npm install --save hammerjs
