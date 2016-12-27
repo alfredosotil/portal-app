@@ -32,3 +32,16 @@ npm install --save @angular/material
 
 #install hammer
 npm install --save hammerjs
+
+
+------------------------------------------------------
+
+
+codigo para package.json
+
+"./js/_utils.js",
+"./js/_googlemap_init.js",
+"./js/_front.js",
+"./js/_reviews.js",
+"./js/prettyphoto/jquery.prettyPhoto.minca7f.js?ver=no-compose",
+"./js/jquery.flexslider.min.js",
