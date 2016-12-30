@@ -18,8 +18,7 @@
             "prefix": "app",
             "mobile": false,
             "styles": [
-                "styles.css",
-                "material2-app-theme.scss",
+                "styles.css",                
                 "./icon/fontello/css/fontello.css",
                 "./icon/fontello/css/animation.css",
                 "./css/shortcodes.css",
@@ -36,9 +35,8 @@
                 "./css/themes/orange.css",
                 "./css/responsive.css",
                 "./js/prettyphoto/css/prettyPhoto.css",
-                "./js/mediaplayer/mediaelementplayer.css",
-                "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.css"
+                "./js/mediaplayer/mediaelementplayer.css"
+                
             ],
             "scripts": [
                 "./js/jquery/jquery.js",
@@ -50,14 +48,18 @@
                 "./js/jquery.mobilemenu.min.js",
                 "./js/jquery.slidemenu.js",
                 "./js/skip-link-focus-fix.js",                
+                "./js/_utils.js",                
+                "./js/_googlemap_init.js",                
+                "./js/_front.js",                
+                "./js/_reviews.js",                
+                "./js/_contact_form.js",                
+                "./js/prettyphoto/jquery.prettyPhoto.minca7f.js?ver=no-compose",                
+                "./js/jquery.flexslider.min.js",                
                 "./js/mediaplayer/mediaelement-and-player.min.js",                
                 "./js/jquery/ui/jquery.ui.core.min.js",
                 "./js/jquery/ui/jquery.ui.widget.min.js",
                 "./js/jquery/ui/jquery.ui.mouse.min.js",
-                "./js/jquery/ui/jquery.ui.draggable.min.js",
-                "../node_modules/jquery/dist/jquery.min.js",
-                "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-                "../node_modules/hammerjs/hammer.min.js"
+                "./js/jquery/ui/jquery.ui.draggable.min.js"                
             ],
             "environments": {
                 "source": "environments/environment.ts",

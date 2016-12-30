@@ -1,9 +1,9 @@
 jQuery(document).ready(function(){
     //include Custom.JS
-    jQuery('head').append('<link rel="stylesheet" type="text/css" media="all" href="custom_tools/css/colorpicker.css">');
-    jQuery('head').append('<script type="text/javascript" src="custom_tools/js/jquery.cookie.js"></script>');
-    jQuery('head').append('<script type="text/javascript" src="custom_tools/js/colorpicker.js"></script>');
-    jQuery('head').append('<script type="text/javascript" src="custom_tools/js/custom-block.js"></script>');
+//    jQuery('head').append('<link rel="stylesheet" type="text/css" media="all" href="custom_tools/css/colorpicker.css">');
+//    jQuery('head').append('<script type="text/javascript" src="custom_tools/js/jquery.cookie.js"></script>');
+//    jQuery('head').append('<script type="text/javascript" src="custom_tools/js/colorpicker.js"></script>');
+//    jQuery('head').append('<script type="text/javascript" src="custom_tools/js/custom-block.js"></script>');
 });
 
 /* global jQuery:false */
