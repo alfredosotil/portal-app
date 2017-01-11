@@ -20,6 +20,7 @@ ng test
 
 # crear dataService
 ng generate service TodoData
+ng generate service services/property
 
 #install jquery 
 npm install jquery --save

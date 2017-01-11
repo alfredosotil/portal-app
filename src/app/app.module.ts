@@ -6,17 +6,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
-import { HomeComponent } from './home/home.component';
-import { BlogComponent } from './blog/blog.component';
-import { MoviesComponent } from './movies/movies.component';
-import { MusicComponent } from './music/music.component';
-import { GiftsComponent } from './gifts/gifts.component';
-import { ContactusComponent } from './contactus/contactus.component';
+import { MainComponent } from './components/main/main.component';
+import { HomeComponent } from './components/home/home.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { MusicComponent } from './components/music/music.component';
+import { GiftsComponent } from './components/gifts/gifts.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { SearchComponent } from './components/search/search.component';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: HomeComponent},
     { path: 'home', component: HomeComponent },
+    { path: 'search', component: SearchComponent },
     { path: 'blog', component: BlogComponent },
     { path: 'movies', component: MoviesComponent },
     { path: 'music', component: MusicComponent },
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
         MoviesComponent,
         MusicComponent,
         GiftsComponent,
-        ContactusComponent
+        ContactusComponent,
+        SearchComponent
     ],
     imports: [
         BrowserModule,
