@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 
+import { GlobalService } from './global.service';
+import { PropertyService } from './services/property.service';
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,7 +19,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { SearchComponent } from './components/search/search.component';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent},
+    { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'search', component: SearchComponent },
     { path: 'blog', component: BlogComponent },
@@ -51,7 +54,10 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes),
         MaterialModule.forRoot()
     ],
-    providers: [],
+    providers: [
+        GlobalService,
+        PropertyService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
