@@ -34,9 +34,9 @@
                 "./css/themes/yellowlight.css",
                 "./css/themes/orange.css",
                 "./css/responsive.css",
+                "./semantic/semantic.min.css",   
                 "./js/prettyphoto/css/prettyPhoto.css",
-                "./js/mediaplayer/mediaelementplayer.css"
-                
+                "./js/mediaplayer/mediaelementplayer.css"                
             ],
             "scripts": [
                 "./js/jquery/jquery.js",
@@ -44,6 +44,7 @@
                 "./js/jquery/ui/jquery-ui-1.10.4.custom.js",
                 "./js/jquery.cookie.js",
                 "./js/jquery.easing.js",
+                "./semantic/semantic.min.js",                
                 "./js/superfish.js",
                 "./js/jquery.mobilemenu.min.js",
                 "./js/jquery.slidemenu.js",

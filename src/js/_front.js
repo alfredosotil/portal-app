@@ -105,14 +105,15 @@ jQuery(document).ready(function() {
 
 	// Puzzle color
 
-	var arrPuzzleColor = jQuery('[data-puzzlecolor]');
-	jQuery.each(arrPuzzleColor, function(){
-		var puzzleColor = jQuery(this).attr('data-puzzlecolor');
-		var clr = HexToRGB(puzzleColor);
-		jQuery(this).css("background-color", '#'+puzzleColor);
-		jQuery(this).find('.reviews_summary').css("background-color", '#'+puzzleColor)
-		jQuery(this).find('.post_content_padding').attr('style', 'background: -moz-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%, rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%, rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%);	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba('+clr.r+','+clr.g+','+clr.b+',0)), color-stop(1%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01)), color-stop(50%,rgba('+clr.r+','+clr.g+','+clr.b+',1)));	background: -webkit-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); background: -o-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); background: -ms-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%);	background: linear-gradient(to bottom,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00'+puzzleColor+'", endColorstr='+puzzleColor+',GradientType=0 );');
-		});
+//	var arrPuzzleColor = jQuery('[data-puzzlecolor]');
+//        console.log('# data puzzle color');
+//	jQuery.each(arrPuzzleColor, function(){
+//		var puzzleColor = jQuery(this).attr('data-puzzlecolor');
+//		var clr = HexToRGB(puzzleColor);
+//		jQuery(this).css("background-color", '#'+puzzleColor);
+//		jQuery(this).find('.reviews_summary').css("background-color", '#'+puzzleColor)
+//		jQuery(this).find('.post_content_padding').attr('style', 'background: -moz-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%, rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%, rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%);	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba('+clr.r+','+clr.g+','+clr.b+',0)), color-stop(1%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01)), color-stop(50%,rgba('+clr.r+','+clr.g+','+clr.b+',1)));	background: -webkit-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); background: -o-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); background: -ms-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%);	background: linear-gradient(to bottom,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00'+puzzleColor+'", endColorstr='+puzzleColor+',GradientType=0 );');
+//		});
 
 	// Skills
 
@@ -142,12 +143,12 @@ jQuery(document).ready(function() {
 
 	//Category Icon Bg
 
-	var arrCategoryIconBg = jQuery('[data-categoryiconbg]');	
-	jQuery.each(arrCategoryIconBg, function(){
-		var CategoryIconBg = jQuery(this).attr('data-categoryiconbg');
-		jQuery(this).css("background-color", '#'+CategoryIconBg)
-		}
-	);
+//	var arrCategoryIconBg = jQuery('[data-categoryiconbg]');	
+//	jQuery.each(arrCategoryIconBg, function(){
+//		var CategoryIconBg = jQuery(this).attr('data-categoryiconbg');
+//		jQuery(this).css("background-color", '#'+CategoryIconBg)
+//		}
+//	);
 
 	// Accordion1
 									

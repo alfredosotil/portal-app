@@ -9,20 +9,23 @@
                         <div itemprop="articleBody" class="post_text_area">
                             <div class="sc_section sc_puzzles custom-container">                                
 
-                                <!-- puzzle item -->				
+                                <!-- puzzle item -->
                                 <div class="sc_blogger_item sc_blogger_item_puzzles" *ngFor="let p of properties">
-                                    <div class="post_thumb image_wrapper down-1">
+                                     <div class="post_thumb image_wrapper down-1">
                                         <a href="single-format-gallery.html"><img alt="" src="images_posts/img-post31.jpg"></a>
-                                        <span class="post_format theme_accent_bg icon-camera" ></span>
-                                        <span class="post_category theme_accent_bg" >{{p.type.type}}</span>
-                                        <div class="post_content_wrapper theme_puzzles" >
+                                        <span class="post_format theme_accent_bg icon-camera" data-categoryiconbg="00a0db"></span>
+                                        <span class="post_category theme_accent_bg" data-categoryiconbg="00a0db">{{p.type.type}}</span>
+                                        <div class="post_content_wrapper theme_puzzles" data-puzzlecolor="111111">
                                             <h2 class="post_subtitle"><a href="single-format-gallery.html">{{p.address}}</a></h2>
                                             <div class="reviews_summary blog_reviews theme_puzzles">
                                                 <div class="criteria_summary criteria_row">
-                                                    <span class="criteria_stars" title="4.6 from 5">
+                                                    <!--<ngl-rating [(rate)]="value" [isReadonly]="readonly" [size]="size" [colorOn]="color"></ngl-rating>-->
+                                                    <!--<ngl-rating [(rate)]="p.priority" [isReadonly]="true" [size]="small"></ngl-rating>-->
+                                                    <sm-rating class="ui huge star rating disabled" [initialRating]="p.priority" [maxRating]="5" disabled></sm-rating>
+<!--                                                    <span class="criteria_stars" title="{{p.priority}} from 5">
                                                         <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                                        <span class="stars_on" data-review="92"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                                    </span>
+                                                        <span class="stars_on" [attr.data-review]="+p.priority * 20"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
+                                                    </span>-->
                                                 </div>
                                             </div>
                                             <div class="post_descr"><p>{{p.references}}</p></div>
@@ -31,7 +34,7 @@
                                     </div>
                                 </div>
                                 <!-- /puzzle item -->
-                                
+
                             </div>
                         </div>
                     </div>
