@@ -46,6 +46,11 @@ codigo para package.json
 "./js/_reviews.js",
 "./js/prettyphoto/jquery.prettyPhoto.minca7f.js?ver=no-compose",
 "./js/jquery.flexslider.min.js",
+"../node_modules/tether/dist/js/tether.min.js",               
+                "../node_modules/bootstrap/dist/js/bootstrap.min.js",               
+                "../node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js"     
+                "../node_modules/tether/dist/css/tether.min.css",               
+
 
 
 ----------------------------------------------------------

@@ -632,7 +632,7 @@ body:not(.fullwidth) #header_middle_inner {
 #mainmenu_area {
 	width:100%;
 	position:relative;
-	z-index:2000;
+	z-index:1000;
 }
 #mainmenu_area:after {
 	content:"";

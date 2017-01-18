@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-//import { NglModule } from 'ng-lightning/ng-lightning';
+import { NglModule } from 'ng-lightning/ng-lightning';
 import { NgSemanticModule } from 'ng-semantic';
+//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { GlobalService } from './global.service';
 import { PropertyService } from './services/property.service';
@@ -53,7 +54,10 @@ const appRoutes: Routes = [
         FormsModule,
         HttpModule,
         RouterModule.forRoot(appRoutes),
-//        NglModule.forRoot()
+//        NgbModule.forRoot(),
+        NglModule.forRoot({
+            svgPath: 'assets',
+        }),
         NgSemanticModule
     ],
     providers: [

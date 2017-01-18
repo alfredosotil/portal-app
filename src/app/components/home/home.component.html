@@ -1,5 +1,9 @@
 <div id="main" class="without_sidebar">   
-
+    <sm-modal title="Hello from Modal" class="basic" #myModalProperty>
+        <modal-content>
+            prueba
+        </modal-content>
+    </sm-modal>
     <div id="main_inner" class="clearboth blog_style_fullpost">
         <!-- content -->
         <div id="content" class="content_blog post_single" >
@@ -13,19 +17,22 @@
                                 <div class="sc_blogger_item sc_blogger_item_puzzles" *ngFor="let p of properties">
                                      <div class="post_thumb image_wrapper down-1">
                                         <a href="single-format-gallery.html"><img alt="" src="images_posts/img-post31.jpg"></a>
-                                        <span class="post_format theme_accent_bg icon-camera" data-categoryiconbg="00a0db"></span>
-                                        <span class="post_category theme_accent_bg" data-categoryiconbg="00a0db">{{p.type.type}}</span>
+                                        <span class="post_format theme_accent_bg icon-camera" data-categoryiconbg="00a0db" (click)="myModalProperty.show()"></span>
+                                        <span class="post_category theme_accent_bg" [attr.data-categoryiconbg]="selectColorTypeProperty(p.type.type)">{{p.type.type}}</span>
                                         <div class="post_content_wrapper theme_puzzles" data-puzzlecolor="111111">
                                             <h2 class="post_subtitle"><a href="single-format-gallery.html">{{p.address}}</a></h2>
                                             <div class="reviews_summary blog_reviews theme_puzzles">
                                                 <div class="criteria_summary criteria_row">
                                                     <!--<ngl-rating [(rate)]="value" [isReadonly]="readonly" [size]="size" [colorOn]="color"></ngl-rating>-->
-                                                    <!--<ngl-rating [(rate)]="p.priority" [isReadonly]="true" [size]="small"></ngl-rating>-->
-                                                    <sm-rating class="ui huge star rating disabled" [initialRating]="p.priority" [maxRating]="5" disabled></sm-rating>
-<!--                                                    <span class="criteria_stars" title="{{p.priority}} from 5">
-                                                        <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                                        <span class="stars_on" [attr.data-review]="+p.priority * 20"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                                    </span>-->
+                                                    <!--<ngl-rating [(rate)]="p.priority" [isReadonly]="true" [style.fon]></ngl-rating>-->
+                                                    <!--<sm-button class="positive disabled" icon="thumbs up">Click Me</sm-button>-->
+                                                    <!--<sm-rating class="massive star" [initialRating]="p.priority" [maxRating]="5" #rating></sm-rating>-->
+                                                    <div class="ui massive star rating" [attr.data-rating]="p.priority" [attr.data-max-rating]="5" #rating></div>
+                                                    <!--                                                    <span class="criteria_stars" title="{{p.priority}} from 5">
+                                                                                                            <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
+                                                                                                            <span class="stars_on" [attr.data-review]="+p.priority * 20"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
+                                                                                                        </span>-->
+                                                    <!--<ngb-rating [max]="5" [rate]="p.priority" [readonly]="true"></ngb-rating>-->
                                                 </div>
                                             </div>
                                             <div class="post_descr"><p>{{p.references}}</p></div>

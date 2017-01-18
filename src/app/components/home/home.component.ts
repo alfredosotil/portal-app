@@ -1,6 +1,7 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, AfterViewChecked } from '@angular/core';
 import { PropertyService } from '../../services/property.service';
-import * as jQuery from 'jquery';
+//import * as jQuery from 'jquery';
+declare var jQuery: any;
 
 @Component({
     selector: 'app-home',
@@ -9,7 +10,7 @@ import * as jQuery from 'jquery';
     providers: [PropertyService]
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
-
+    @ViewChild("rating") rating: ElementRef;
     properties = [];
 
     constructor(private propertyService: PropertyService) {
@@ -31,6 +32,33 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.stylePuzzlecolor();
         this.styleCategoryIconBg();
         this.styleReview();
+        jQuery('.ui.rating').rating('disable');
+    }
+
+    onEvent(event: Event) {
+        //        event.preventDefault();
+        //        event.stopPropagation();
+        console.log(event);
+    }
+
+    selectColorTypeProperty(type) {
+//        console.log(type);
+            var color = "000000";
+            switch (type) {
+            case "Terreno":
+                color = "bb8Ffce";
+                break;
+            case "Departamento":
+                color = "3498db";
+                break;
+            case "Oficina":
+                color = "48c9b0";
+                break;
+            case "Local":
+                color = "f4d03f";
+                break;            
+        }
+        return color;
     }
 
     private listProperties() {
@@ -40,7 +68,6 @@ export class HomeComponent implements OnInit, AfterViewChecked {
             error => alert(error),
             () => console.log("# Finished list properties")
             );
-        //               this.styleDivs();
     }
 
     private stylePuzzlecolor() {

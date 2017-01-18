@@ -9,8 +9,9 @@
             "outDir": "dist",
             "assets": [
                 "assets",
-                "favicon.ico"
-            ],
+                "favicon.ico",
+                "../node_modules/@salesforce-ux/design-system/assets/icons/utility-sprite/svg/symbols.svg"
+                ],
             "index": "index.html",
             "main": "main.ts",
             "test": "test.ts",
@@ -36,7 +37,8 @@
                 "./css/responsive.css",
                 "./semantic/semantic.min.css",   
                 "./js/prettyphoto/css/prettyPhoto.css",
-                "./js/mediaplayer/mediaelementplayer.css"                
+                "./js/mediaplayer/mediaelementplayer.css",             
+                "../node_modules/bootstrap/dist/css/bootstrap.min.css"                
             ],
             "scripts": [
                 "./js/jquery/jquery.js",
@@ -60,7 +62,7 @@
                 "./js/jquery/ui/jquery.ui.core.min.js",
                 "./js/jquery/ui/jquery.ui.widget.min.js",
                 "./js/jquery/ui/jquery.ui.mouse.min.js",
-                "./js/jquery/ui/jquery.ui.draggable.min.js"                
+                "./js/jquery/ui/jquery.ui.draggable.min.js"                           
             ],
             "environments": {
                 "source": "environments/environment.ts",
