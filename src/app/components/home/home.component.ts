@@ -10,8 +10,10 @@ declare var jQuery: any;
     providers: [PropertyService]
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
-    @ViewChild("rating") rating: ElementRef;
+    @ViewChild("myModalProperty") myModalProperty: ElementRef;
     properties = [];
+    model = {};
+//    modelsetter = false;
 
     constructor(private propertyService: PropertyService) {
         //        this.elementRef = elementRef;
@@ -19,6 +21,8 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
     ngOnInit() {
         this.listProperties();
+        this.initSlider();
+//        this.modelsetter = false;
     }
 
     ngAfterViewInit() {
@@ -32,7 +36,12 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.stylePuzzlecolor();
         this.styleCategoryIconBg();
         this.styleReview();
-        jQuery('.ui.rating').rating('disable');
+        jQuery('.ui.rating').rating('disable');        
+    }
+    
+    setModel(model: any){
+//        this.model = model;
+//        this.modelsetter = true;
     }
 
     onEvent(event: Event) {
@@ -40,6 +49,11 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         //        event.stopPropagation();
         console.log(event);
     }
+    
+//    showModal(model: any){
+//        this.setModel(model);
+////        this.myModalProperty.show();
+//    }
 
     selectColorTypeProperty(type) {
 //        console.log(type);
@@ -68,6 +82,36 @@ export class HomeComponent implements OnInit, AfterViewChecked {
             error => alert(error),
             () => console.log("# Finished list properties")
             );
+    }
+    
+    private initSlider(){
+        jQuery('.sc_slider_flex').each(function () {
+		"use strict";
+		if (jQuery(this).hasClass('inited')) return;
+		jQuery(this).addClass('inited').flexslider({
+			directionNav: true,
+			prevText: '',
+			nextText: '',
+			controlNav: jQuery(this).hasClass('sc_slider_controls'),
+			animation: 'fade',
+			animationLoop: true,
+			slideshow: true,
+			slideshowSpeed: 7000,
+			animationSpeed: 600,
+			pauseOnAction: true,
+			pauseOnHover: true,
+			useCSS: false,
+			manualControls: ''
+			/*
+			start: function(slider){},
+			before: function(slider){},
+			after: function(slider){},
+			end: function(slider){},              
+			added: function(){},            
+			removed: function(){} 
+			*/
+		});
+	});
     }
 
     private stylePuzzlecolor() {

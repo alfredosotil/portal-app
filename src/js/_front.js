@@ -415,9 +415,9 @@ jQuery(document).ready(function() {
 
 
 	// Main menu
-	if (THEMEREX_mainMenuMobile) {
-		jQuery('#mainmenu').mobileMenu({mobileWidth: THEMEREX_mainMenuMobileWidth});
-	}
+//	if (THEMEREX_mainMenuMobile) {
+//		jQuery('#mainmenu').mobileMenu({mobileWidth: THEMEREX_mainMenuMobileWidth});
+//	}
 	if (THEMEREX_mainMenuSlider) {
 		jQuery('#mainmenu').spasticNav();
 	}
@@ -433,27 +433,27 @@ jQuery(document).ready(function() {
 		speedOut: 'fast',
 		delay: 100
 	});
-
-	jQuery('#mainmenu .sf-sub-indicator').addClass('icon-right-open').html('');
-	if (THEMEREX_mainMenuFixed && jQuery('#header_middle').length > 0) {
-		var menu_offset = jQuery('#header_middle').offset().top;
-		jQuery(window).resize(function(){
-			var winWidth =  document.body.clientWidth;
-			if (winWidth < 800) jQuery('body').addClass('menu_mobile');
-			if (winWidth >= 800) jQuery('body').removeClass('menu_mobile');
-		});
-		jQuery(window).scroll(function() {
-			"use strict";
-			
-			if (jQuery('body').hasClass('menu_mobile')) return;
-			var s = jQuery(this).scrollTop();
-			if (s >= menu_offset) {
-				jQuery('body').addClass('menu_fixed');
-			} else {
-				jQuery('body').removeClass('menu_fixed');
-			}
-		});
-	}
+//
+//	jQuery('#mainmenu .sf-sub-indicator').addClass('icon-right-open').html('');
+//	if (THEMEREX_mainMenuFixed && jQuery('#header_middle').length > 0) {
+//		var menu_offset = jQuery('#header_middle').offset().top;
+//		jQuery(window).resize(function(){
+//			var winWidth =  document.body.clientWidth;
+//			if (winWidth < 800) jQuery('body').addClass('menu_mobile');
+//			if (winWidth >= 800) jQuery('body').removeClass('menu_mobile');
+//		});
+//		jQuery(window).scroll(function() {
+//			"use strict";
+//			
+//			if (jQuery('body').hasClass('menu_mobile')) return;
+//			var s = jQuery(this).scrollTop();
+//			if (s >= menu_offset) {
+//				jQuery('body').addClass('menu_fixed');
+//			} else {
+//				jQuery('body').removeClass('menu_fixed');
+//			}
+//		});
+//	}
 
 	// Side menu builder
 	if (jQuery('#sidemenu_link').length > 0) {

@@ -9,8 +9,10 @@
             "outDir": "dist",
             "assets": [
                 "assets",
-                "favicon.ico",
-                "../node_modules/@salesforce-ux/design-system/assets/icons/utility-sprite/svg/symbols.svg"
+                "icon",
+                "images",
+                "images_posts",
+                "favicon.ico"
                 ],
             "index": "index.html",
             "main": "main.ts",
@@ -37,8 +39,7 @@
                 "./css/responsive.css",
                 "./semantic/semantic.min.css",   
                 "./js/prettyphoto/css/prettyPhoto.css",
-                "./js/mediaplayer/mediaelementplayer.css",             
-                "../node_modules/bootstrap/dist/css/bootstrap.min.css"                
+                "./js/mediaplayer/mediaelementplayer.css"
             ],
             "scripts": [
                 "./js/jquery/jquery.js",
