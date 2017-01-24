@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import {OnInit} from '@angular/core';
 
 @Component({
@@ -7,7 +7,6 @@ import {OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
-  
-  ngOnInit():any{}
+    
+    ngOnInit():any{}
 }

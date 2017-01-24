@@ -127,12 +127,12 @@ jQuery(document).ready(function() {
 
 	//Slider
 
-	var arrSlides = jQuery('[data-slide]');	
-	jQuery.each(arrSlides, function(){
-		var slideUrl = jQuery(this).attr('data-slide');
-		jQuery(this).css("background-image", "url("+slideUrl+")")
-		}
-	);
+//	var arrSlides = jQuery('[data-slide]');	
+//	jQuery.each(arrSlides, function(){
+//		var slideUrl = jQuery(this).attr('data-slide');
+//		jQuery(this).css("background-image", "url("+slideUrl+")")
+//		}
+//	);
 
 	var arrSlideTextBg = jQuery('[data-slidetextbg]');	
 	jQuery.each(arrSlideTextBg, function(){
@@ -1021,33 +1021,33 @@ function initPostFormats() {
 		});
 
 	// Galleries Slider
-	jQuery('.sc_slider_flex').each(function () {
-		"use strict";
-		if (jQuery(this).hasClass('inited')) return;
-		jQuery(this).addClass('inited').flexslider({
-			directionNav: true,
-			prevText: '',
-			nextText: '',
-			controlNav: jQuery(this).hasClass('sc_slider_controls'),
-			animation: 'fade',
-			animationLoop: true,
-			slideshow: true,
-			slideshowSpeed: 7000,
-			animationSpeed: 600,
-			pauseOnAction: true,
-			pauseOnHover: true,
-			useCSS: false,
-			manualControls: ''
-			/*
-			start: function(slider){},
-			before: function(slider){},
-			after: function(slider){},
-			end: function(slider){},              
-			added: function(){},            
-			removed: function(){} 
-			*/
-		});
-	});
+//	jQuery('.sc_slider_flex').each(function () {
+//		"use strict";
+//		if (jQuery(this).hasClass('inited')) return;
+//		jQuery(this).addClass('inited').flexslider({
+//			directionNav: true,
+//			prevText: '',
+//			nextText: '',
+//			controlNav: jQuery(this).hasClass('sc_slider_controls'),
+//			animation: 'fade',
+//			animationLoop: true,
+//			slideshow: true,
+//			slideshowSpeed: 7000,
+//			animationSpeed: 600,
+//			pauseOnAction: true,
+//			pauseOnHover: true,
+//			useCSS: false,
+//			manualControls: ''
+//			/*
+//			start: function(slider){},
+//			before: function(slider){},
+//			after: function(slider){},
+//			end: function(slider){},              
+//			added: function(){},            
+//			removed: function(){} 
+//			*/
+//		});
+//	});
 	
 	// Add video on thumb click
 	jQuery('.post_thumb .post_video_play').each(function () {

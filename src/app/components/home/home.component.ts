@@ -1,6 +1,5 @@
-import { Component, ViewChild, ElementRef, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, AfterViewChecked, Renderer, EventEmitter } from '@angular/core';
 import { PropertyService } from '../../services/property.service';
-//import * as jQuery from 'jquery';
 declare var jQuery: any;
 
 @Component({
@@ -10,10 +9,11 @@ declare var jQuery: any;
     providers: [PropertyService]
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
-    @ViewChild("myModalProperty") myModalProperty: ElementRef;
+    @ViewChild("myModalProperty") myModalProperty;
+    input = new EventEmitter();
     properties = [];
-    model = {};
-//    modelsetter = false;
+    public model = {};
+    //    modelsetter = false;
 
     constructor(private propertyService: PropertyService) {
         //        this.elementRef = elementRef;
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     ngOnInit() {
         this.listProperties();
         this.initSlider();
-//        this.modelsetter = false;
+        //        this.modelsetter = false;
     }
 
     ngAfterViewInit() {
@@ -36,12 +36,8 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.stylePuzzlecolor();
         this.styleCategoryIconBg();
         this.styleReview();
-        jQuery('.ui.rating').rating('disable');        
-    }
-    
-    setModel(model: any){
-//        this.model = model;
-//        this.modelsetter = true;
+//                this.initSlider();
+        jQuery('.ui.rating').rating('disable');
     }
 
     onEvent(event: Event) {
@@ -49,16 +45,18 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         //        event.stopPropagation();
         console.log(event);
     }
-    
-//    showModal(model: any){
-//        this.setModel(model);
-////        this.myModalProperty.show();
-//    }
+
+    showModal(model: any) {
+        this.setModel(model);
+//        jQuery(".ui .dimmer .modals").css("z-index","2010");
+        this.myModalProperty.show();
+        //        this.initSlider();
+    }
 
     selectColorTypeProperty(type) {
-//        console.log(type);
-            var color = "000000";
-            switch (type) {
+        //        console.log(type);
+        var color = "000000";
+        switch (type) {
             case "Terreno":
                 color = "bb8Ffce";
                 break;
@@ -70,7 +68,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
                 break;
             case "Local":
                 color = "f4d03f";
-                break;            
+                break;
         }
         return color;
     }
@@ -83,35 +81,42 @@ export class HomeComponent implements OnInit, AfterViewChecked {
             () => console.log("# Finished list properties")
             );
     }
-    
-    private initSlider(){
-        jQuery('.sc_slider_flex').each(function () {
-		"use strict";
-		if (jQuery(this).hasClass('inited')) return;
-		jQuery(this).addClass('inited').flexslider({
-			directionNav: true,
-			prevText: '',
-			nextText: '',
-			controlNav: jQuery(this).hasClass('sc_slider_controls'),
-			animation: 'fade',
-			animationLoop: true,
-			slideshow: true,
-			slideshowSpeed: 7000,
-			animationSpeed: 600,
-			pauseOnAction: true,
-			pauseOnHover: true,
-			useCSS: false,
-			manualControls: ''
-			/*
-			start: function(slider){},
-			before: function(slider){},
-			after: function(slider){},
-			end: function(slider){},              
-			added: function(){},            
-			removed: function(){} 
-			*/
-		});
-	});
+
+    private initSlider() {
+        jQuery('.sc_slider_flex').each(function() {
+            "use strict";
+            if (jQuery(this).hasClass('inited')) return;
+            jQuery(this).addClass('inited').flexslider({
+                directionNav: true,
+                prevText: '',
+                nextText: '',
+                controlNav: jQuery(this).hasClass('sc_slider_controls'),
+                animation: 'fade',
+                animationLoop: true,
+                slideshow: true,
+                slideshowSpeed: 7000,
+                animationSpeed: 600,
+                pauseOnAction: true,
+                pauseOnHover: true,
+                useCSS: false,
+                manualControls: ''
+                /*
+                start: function(slider){},
+                before: function(slider){},
+                after: function(slider){},
+                end: function(slider){},              
+                added: function(){},            
+                removed: function(){} 
+                */
+            });
+            //Slider
+            var arrSlides = jQuery('[data-slide]');
+            jQuery.each(arrSlides, function() {
+                var slideUrl = jQuery(this).attr('data-slide');
+                jQuery(this).css("background-image", "url(" + slideUrl + ")")
+            }
+            );
+        });
     }
 
     private stylePuzzlecolor() {
@@ -157,5 +162,13 @@ export class HomeComponent implements OnInit, AfterViewChecked {
             "b": parseInt(color.substring(4, 6), 16)
         }
     }
+
+    setModel(model: any) {
+        this.model = model;
+    }
+    getModel(): any {
+        return this.model;
+    }
+
 
 }

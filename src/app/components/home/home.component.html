@@ -1,57 +1,74 @@
+
+<div id="header_middle_wrapper">
+        <div id="header_middle"  >
+            <div id="header_middle_inner">
+                <div class="search_form_area theme_body">
+                    <form class="search_form" action="#"><input class="search_field" type="search" placeholder="Escribe tu busqueda con palabras claves ..." #inputSearch (change)="input.emit(inputSearch.value)" name="s"></form>
+                    <a href="#" class="search_close"><span class="icon-cancel-circled"></span></a>
+                </div>
+                <!-- main menu -->
+                <nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
+                    <a href="#" class="search_link"><span class="icon-search"></span></a>
+                </nav>
+                <!-- #main menu -->
+            </div>
+        </div>
+    </div>
 <div id="main" class="without_sidebar">   
-    <sm-modal title="Hello from Modal" class="basic" #myModalProperty>
+    <sm-modal title="{{model?.type?.type}} en {{model?.state?.state}}" icon="home" class="basic" #myModalProperty>
         <modal-content>
             <!-- slider -->
-                <!--<div id="main_slider" class="main_slider_fixed">-->
-                    <div id="main_slider_inner">
-                        <div class="sc_slider sc_slider_flex">
-                            <ul class="slides">
-                                <!-- slider item -->
-                                <li data-slide="images/slider/slide1.jpg">
-                                    <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(114,13,65,0.8)">
-                                        <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">Movies</div>
-                                        <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
-                                            <div class="criteria_summary criteria_row">
-                                                <span class="criteria_stars" title="4.6 from 5">
-                                                    <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                                    <span class="stars_on" data-review="92"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <h2 class="sc_slider_subtitle">
-                                            <a href="single-format-quote.html">We're the Millers</a>
-                                        </h2>
-                                        <div class="sc_slider_descr">A veteran pot dealer creates a fake family as part of his plan to move a huge shipment of weed into the U.S. from Mexico</div>
+            <!--<div id="main_slider" class="main_slider_fixed">-->
+            <div id="main_slider_inner">
+                <div class="sc_slider sc_slider_flex">
+                    <ul class="slides">
+                        <!-- slider item -->
+                        <li data-slide="images/slider/slide1.jpg">
+                            <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(114,13,65,0.8)">
+                                <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">Movies</div>
+                                <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
+                                    <div class="criteria_summary criteria_row">
+                                        <span class="criteria_stars" title="4.6 from 5">
+                                            <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
+                                            <span class="stars_on" data-review="92"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
+                                        </span>
                                     </div>
-                                </li>
-                                <!-- /slider item -->
+                                </div>
+                                <h2 class="sc_slider_subtitle">
+                                    <a href="single-format-quote.html">We're the Millers</a>
+                                </h2>
+                                <div class="sc_slider_descr">A veteran pot dealer creates a fake family as part of his plan to move a huge shipment of weed into the U.S. from Mexico</div>
+                            </div>
+                        </li>
+                        <!-- /slider item -->
 
-                                <!-- slider item -->
-                                <li data-slide="images/slider/slide2.jpg">
-                                    <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(201,90,0,0.8)">
-                                        <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="96d400">Games</div>
-                                        <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
-                                            <div class="criteria_summary criteria_row">
-                                                <span class="criteria_stars" title="4.7 from 5">
-                                                    <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                                    <span class="stars_on" data-review="94"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <h2 class="sc_slider_subtitle">
-                                            <a href="single-format-standard.html">Hitman</a>
-                                        </h2>
-                                        <div class="sc_slider_descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim enim. Proin tortor diam, ultricies quis quam sed, vulputate mollis arcu. Sed a sem vel urna vehicula gravida. Nullam dui justo, pretium at gravida nec, adipiscing id nulla. Mauris blandit, sapien nec vulputate consequat, lorem quam cursus ligula, sit amet laoreet arcu sem non ..</div>
+                        <!-- slider item -->
+                        <li data-slide="images/slider/slide2.jpg">
+                            <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(201,90,0,0.8)">
+                                <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="96d400">Games</div>
+                                <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
+                                    <div class="criteria_summary criteria_row">
+                                        <span class="criteria_stars" title="4.7 from 5">
+                                            <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
+                                            <span class="stars_on" data-review="94"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
+                                        </span>
                                     </div>
-                                </li>
-                                <!-- /slider item -->                                
-                            </ul>
-                        </div>                    
-                    </div>
-                <!--</div>-->
-                <!-- #slider -->
+                                </div>
+                                <h2 class="sc_slider_subtitle">
+                                    <a href="single-format-standard.html">Hitman</a>
+                                </h2>
+                                <div class="sc_slider_descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim enim. Proin tortor diam, ultricies quis quam sed, vulputate mollis arcu. Sed a sem vel urna vehicula gravida. Nullam dui justo, pretium at gravida nec, adipiscing id nulla. Mauris blandit, sapien nec vulputate consequat, lorem quam cursus ligula, sit amet laoreet arcu sem non ..</div>
+                            </div>
+                        </li>
+                        <!-- /slider item -->                                
+                    </ul>
+                </div>                    
+            </div>
+            <!--</div>-->
+            <!-- #slider -->
         </modal-content>
-    </sm-modal>
+    </sm-modal>  
+
     <div id="main_inner" class="clearboth blog_style_fullpost">
         <!-- content -->
         <div id="content" class="content_blog post_single" >
@@ -62,10 +79,11 @@
                             <div class="sc_section sc_puzzles custom-container">                                
 
                                 <!-- puzzle item -->
-                                <div class="sc_blogger_item sc_blogger_item_puzzles" *ngFor="let p of properties">
+                                <!--<div class="sc_blogger_item sc_blogger_item_puzzles" *ngFor="let p of properties | arrayFilterTypeProperty:{type_id:6}">-->
+                                <div class="sc_blogger_item sc_blogger_item_puzzles" *ngFor="let p of properties | filterStateProperty: inputSearch.value">
                                      <div class="post_thumb image_wrapper down-1">
                                         <a href="single-format-gallery.html"><img alt="" src="images_posts/img-post31.jpg"></a>
-                                        <span class="post_format theme_accent_bg icon-camera" data-categoryiconbg="00a0db" (click)="myModalProperty.show();"></span>
+                                        <span class="post_format theme_accent_bg icon-camera" data-categoryiconbg="00a0db" (click)="showModal(p);"></span>
                                         <span class="post_category theme_accent_bg" [attr.data-categoryiconbg]="selectColorTypeProperty(p.type.type)">{{p.type.type}}</span>
                                         <div class="post_content_wrapper theme_puzzles" data-puzzlecolor="111111">
                                             <h2 class="post_subtitle"><a href="single-format-gallery.html">{{p.address}}</a></h2>

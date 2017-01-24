@@ -632,7 +632,7 @@ body:not(.fullwidth) #header_middle_inner {
 #mainmenu_area {
 	width:100%;
 	position:relative;
-	z-index:1000;
+	z-index:998;
 }
 #mainmenu_area:after {
 	content:"";
@@ -876,7 +876,7 @@ body:not(.fullwidth) #header_middle_inner {
 	display:block;
 	height:54px;
 	line-height:54px;
-	z-index:2000;
+	z-index:997;
 }
 #header_middle_inner .search_link [class*="icon-"]:before {
 	font-size:20px;
@@ -897,7 +897,7 @@ body:not(.fullwidth) #header_middle_inner {
 	animation: zoomin .3s;
 	transform: scale(1);
 	-webkit-transform: scale(1);	
-	z-index:2001;
+	z-index:999;
 }
 #header_middle_inner .search_form_area.hidden {
 	animation: zoomout .3s;

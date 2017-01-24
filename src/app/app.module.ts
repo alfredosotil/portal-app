@@ -19,6 +19,8 @@ import { MusicComponent } from './components/music/music.component';
 import { GiftsComponent } from './components/gifts/gifts.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { SearchComponent } from './components/search/search.component';
+import { FilterStatePropertyPipe } from './pipes/filter-state-property.pipe';
+import { FilterTypePropertyPipe } from './pipes/filter-type-property.pipe';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -47,7 +49,9 @@ const appRoutes: Routes = [
         MusicComponent,
         GiftsComponent,
         ContactusComponent,
-        SearchComponent
+        SearchComponent,
+        FilterStatePropertyPipe,
+        FilterTypePropertyPipe
     ],
     imports: [
         BrowserModule,
