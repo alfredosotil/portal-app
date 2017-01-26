@@ -16,7 +16,7 @@ export class PropertyService {
     ) { }
 
     list() {
-        return this.http.get(this.g.getApiRestUrl() + 'property?expand=state,type,agent')
+        return this.http.get(this.g.getApiRestUrl() + 'property?expand=state,type,agent,imagesProperties')
             .map(res => res.json());
     }
 

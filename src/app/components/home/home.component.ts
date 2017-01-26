@@ -20,8 +20,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     }
 
     ngOnInit() {
-        this.listProperties();
-        this.initSlider();
+        this.listProperties();        
         //        this.modelsetter = false;
     }
 
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.stylePuzzlecolor();
         this.styleCategoryIconBg();
         this.styleReview();
-//                this.initSlider();
+        //                this.initSlider();
         jQuery('.ui.rating').rating('disable');
     }
 
@@ -48,8 +47,10 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
     showModal(model: any) {
         this.setModel(model);
-//        jQuery(".ui .dimmer .modals").css("z-index","2010");
-        this.myModalProperty.show();
+        console.log(model.imagesProperties);
+        this.initSlider();
+        jQuery(".accordion").accordion({exclusive: true, on: "mouseenter"});
+        this.myModalProperty.show({inverted: true, blurring: true});
         //        this.initSlider();
     }
 

@@ -1,21 +1,21 @@
 
 <div id="header_middle_wrapper">
-        <div id="header_middle"  >
-            <div id="header_middle_inner">
-                <div class="search_form_area theme_body">
-                    <form class="search_form" action="#"><input class="search_field" type="search" placeholder="Escribe tu busqueda con palabras claves ..." #inputSearch (change)="input.emit(inputSearch.value)" name="s"></form>
-                    <a href="#" class="search_close"><span class="icon-cancel-circled"></span></a>
-                </div>
-                <!-- main menu -->
-                <nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
-                    <a href="#" class="search_link"><span class="icon-search"></span></a>
-                </nav>
-                <!-- #main menu -->
+    <div id="header_middle"  >
+        <div id="header_middle_inner">
+            <div class="search_form_area theme_body">
+                <form class="search_form" action="#"><input class="search_field" type="search" placeholder="Escribe tu busqueda con palabras claves ..." #inputSearch (change)="input.emit(inputSearch.value)" name="s"></form>
+                <a href="#" class="search_close"><span class="icon-cancel-circled"></span></a>
             </div>
+            <!-- main menu -->
+            <nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
+                <a href="#" class="search_link"><span class="icon-search"></span></a>
+            </nav>
+            <!-- #main menu -->
         </div>
     </div>
+</div>
 <div id="main" class="without_sidebar">   
-    <sm-modal title="{{model?.type?.type}} en {{model?.state?.state}}" icon="home" class="basic" #myModalProperty>
+    <sm-modal title="{{model?.type?.type}} en {{model?.state?.state}}" icon="home" class="basic large" #myModalProperty>
         <modal-content>
             <!-- slider -->
             <!--<div id="main_slider" class="main_slider_fixed">-->
@@ -23,9 +23,9 @@
                 <div class="sc_slider sc_slider_flex">
                     <ul class="slides">
                         <!-- slider item -->
-                        <li data-slide="images/slider/slide1.jpg">
+                        <li data-slide="images/slider/slide1.jpg" *ngFor="let i of model?.imagesProperties">
                             <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(114,13,65,0.8)">
-                                <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">Movies</div>
+                                <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">model?.type?.type</div>
                                 <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
                                     <div class="criteria_summary criteria_row">
                                         <span class="criteria_stars" title="4.6 from 5">
@@ -35,37 +35,44 @@
                                     </div>
                                 </div>
                                 <h2 class="sc_slider_subtitle">
-                                    <a href="single-format-quote.html">We're the Millers</a>
+                                    <a href="single-format-quote.html">En {{model?.state?.state}}</a>
                                 </h2>
-                                <div class="sc_slider_descr">A veteran pot dealer creates a fake family as part of his plan to move a huge shipment of weed into the U.S. from Mexico</div>
+                                <div class="sc_slider_descr">{{model?.address}}</div>
                             </div>
                         </li>
                         <!-- /slider item -->
-
-                        <!-- slider item -->
-                        <li data-slide="images/slider/slide2.jpg">
-                            <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(201,90,0,0.8)">
-                                <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="96d400">Games</div>
-                                <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
-                                    <div class="criteria_summary criteria_row">
-                                        <span class="criteria_stars" title="4.7 from 5">
-                                            <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                            <span class="stars_on" data-review="94"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <h2 class="sc_slider_subtitle">
-                                    <a href="single-format-standard.html">Hitman</a>
-                                </h2>
-                                <div class="sc_slider_descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim enim. Proin tortor diam, ultricies quis quam sed, vulputate mollis arcu. Sed a sem vel urna vehicula gravida. Nullam dui justo, pretium at gravida nec, adipiscing id nulla. Mauris blandit, sapien nec vulputate consequat, lorem quam cursus ligula, sit amet laoreet arcu sem non ..</div>
-                            </div>
-                        </li>
-                        <!-- /slider item -->                                
                     </ul>
                 </div>                    
             </div>
             <!--</div>-->
             <!-- #slider -->
+            <div class="ui styled fluid accordion">
+                <div class="title active">
+                    <i class="dropdown icon"></i>
+                    How do you acquire a dog?
+                </div>
+                <div class="content active">
+                    <p class="transition visible">Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+                    <p class="transition visible">A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    How do you acquire a dog?
+                </div>
+                <div class="content">
+                    <p class="transition visible">Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+                    <p class="transition visible">A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    How do you acquire a dog?
+                </div>
+                <div class="content">
+                    <p class="transition visible">Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+                    <p class="transition visible">A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+                </div>
+                
+            </div>
         </modal-content>
     </sm-modal>  
 
