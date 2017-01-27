@@ -23,6 +23,7 @@
                     <ul class="slides">
                         <!-- slider item -->
                         <li [attr.data-slide]="'uploads/property/' + i.name" *ngFor="let i of model?.imagesProperties" >
+                        <li data-slide="images/slider/slide1.jpg" *ngFor="let i of model?.imagesProperties">
                             <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(114,13,65,0.8)">
                                 <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">{{model?.type?.type}}</div>
                                 <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
