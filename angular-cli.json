@@ -12,6 +12,7 @@
                 "icon",
                 "images",
                 "images_posts",
+                "uploads",
                 "favicon.ico"
                 ],
             "index": "index.html",

@@ -133,13 +133,13 @@ jQuery(document).ready(function() {
 //		jQuery(this).css("background-image", "url("+slideUrl+")")
 //		}
 //	);
-
-	var arrSlideTextBg = jQuery('[data-slidetextbg]');	
-	jQuery.each(arrSlideTextBg, function(){
-		var slideTextBg = jQuery(this).attr('data-slidetextbg');
-		jQuery(this).css("background-color", slideTextBg)
-		}
-	);
+//
+//	var arrSlideTextBg = jQuery('[data-slidetextbg]');	
+//	jQuery.each(arrSlideTextBg, function(){
+//		var slideTextBg = jQuery(this).attr('data-slidetextbg');
+//		jQuery(this).css("background-color", slideTextBg)
+//		}
+//	);
 
 	//Category Icon Bg
 
@@ -263,12 +263,14 @@ jQuery(document).ready(function() {
 	jQuery('.search_link').click(function(e) {
 		"use strict";
 		jQuery('.search_form_area').addClass('shown').removeClass('hidden');
-		e.preventDefault();
+		jQuery('.search_field').focus();
+                e.preventDefault();
 		return false;
 	});
 	jQuery('.search_close').click(function(e) {
 		"use strict";
 		jQuery('.search_form_area').removeClass('shown').addClass('hidden');
+                jQuery('.search_field').val("");
 		e.preventDefault();
 		return false;
 	});

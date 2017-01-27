@@ -1,31 +1,30 @@
 
 <div id="header_middle_wrapper">
-        <div id="header_middle"  >
-            <div id="header_middle_inner">
-                <div class="search_form_area theme_body">
-                    <form class="search_form" action="#"><input class="search_field" type="search" placeholder="Escribe tu busqueda con palabras claves ..." #inputSearch (change)="input.emit(inputSearch.value)" name="s"></form>
-                    <a href="#" class="search_close"><span class="icon-cancel-circled"></span></a>
-                </div>
-                <!-- main menu -->
-                <nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
-                    <a href="#" class="search_link"><span class="icon-search"></span></a>
-                </nav>
-                <!-- #main menu -->
+    <div id="header_middle"  >
+        <div id="header_middle_inner">
+            <div class="search_form_area theme_body">
+                <form class="search_form" action="#"><input class="search_field" type="search" placeholder="Escribe tu busqueda con palabras claves ..." #inputSearch (keyup)="input.emit(inputSearch.value)" (change)="input.emit(inputSearch.value)" name="s"></form>
+                <a href="#" class="search_close" (click)="input.emit(inputSearch.value = '')"><span class="icon-cancel-circled"></span></a>
             </div>
+            <!-- main menu -->
+            <nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
+                <a href="#" class="search_link"><span class="icon-search"></span></a>
+            </nav>
+            <!-- #main menu -->
         </div>
     </div>
+</div>
 <div id="main" class="without_sidebar">   
-    <sm-modal title="{{model?.type?.type}} en {{model?.state?.state}}" icon="home" class="basic" #myModalProperty>
+    <sm-modal title="{{model?.type?.type}} en {{model?.state?.state}}" icon="home" class="large basic blurring" #myModalProperty>
         <modal-content>
             <!-- slider -->
-            <!--<div id="main_slider" class="main_slider_fixed">-->
             <div id="main_slider_inner">
                 <div class="sc_slider sc_slider_flex">
                     <ul class="slides">
                         <!-- slider item -->
-                        <li data-slide="images/slider/slide1.jpg">
+                        <li [attr.data-slide]="'uploads/property/' + i.name" *ngFor="let i of model?.imagesProperties" >
                             <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(114,13,65,0.8)">
-                                <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">Movies</div>
+                                <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">{{model?.type?.type}}</div>
                                 <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
                                     <div class="criteria_summary criteria_row">
                                         <span class="criteria_stars" title="4.6 from 5">
@@ -35,37 +34,40 @@
                                     </div>
                                 </div>
                                 <h2 class="sc_slider_subtitle">
-                                    <a href="single-format-quote.html">We're the Millers</a>
+                                    <a href="single-format-quote.html">En {{model?.state?.state}}</a>
                                 </h2>
-                                <div class="sc_slider_descr">A veteran pot dealer creates a fake family as part of his plan to move a huge shipment of weed into the U.S. from Mexico</div>
+                                <div class="sc_slider_descr">{{model?.price | currency:getCurrency(model?.money):true:'3.2-2'}}</div>
                             </div>
                         </li>
-                        <!-- /slider item -->
-
-                        <!-- slider item -->
-                        <li data-slide="images/slider/slide2.jpg">
-                            <div class="sc_slider_info theme_accent_bg" data-slidetextbg="rgba(201,90,0,0.8)">
-                                <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="96d400">Games</div>
-                                <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
-                                    <div class="criteria_summary criteria_row">
-                                        <span class="criteria_stars" title="4.7 from 5">
-                                            <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                            <span class="stars_on" data-review="94"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <h2 class="sc_slider_subtitle">
-                                    <a href="single-format-standard.html">Hitman</a>
-                                </h2>
-                                <div class="sc_slider_descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim enim. Proin tortor diam, ultricies quis quam sed, vulputate mollis arcu. Sed a sem vel urna vehicula gravida. Nullam dui justo, pretium at gravida nec, adipiscing id nulla. Mauris blandit, sapien nec vulputate consequat, lorem quam cursus ligula, sit amet laoreet arcu sem non ..</div>
-                            </div>
-                        </li>
-                        <!-- /slider item -->                                
+                        <!-- /slider item -->                                                       
                     </ul>
-                </div>                    
-            </div>
-            <!--</div>-->
+                </div>      
+
+            </div>            
             <!-- #slider -->
+            <div class="ui styled fluid">
+                <div class="title active">
+                    <i class="dropdown icon"></i>
+                    Referencias
+                </div>
+                <div class="content active">
+                    <p class="transition visible" style="display: block !important;">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Descripcion del Inmueble
+                </div>
+                <div class="content">
+                    <p class="transition hidden">There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Datos del Agente
+                </div>
+                <div class="content">
+                    <p class="transition hidden">There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+                </div>
+            </div>
         </modal-content>
     </sm-modal>  
 
@@ -76,46 +78,59 @@
                 <article class="theme_article post_format_standard instock">
                     <div class="post_content without_paddings">
                         <div itemprop="articleBody" class="post_text_area">
-                            <div class="sc_section sc_puzzles custom-container">                                
-
-                                <!-- puzzle item -->
-                                <!--<div class="sc_blogger_item sc_blogger_item_puzzles" *ngFor="let p of properties | arrayFilterTypeProperty:{type_id:6}">-->
-                                <div class="sc_blogger_item sc_blogger_item_puzzles" *ngFor="let p of properties | filterStateProperty: inputSearch.value">
-                                     <div class="post_thumb image_wrapper down-1">
-                                        <a href="single-format-gallery.html"><img alt="" src="images_posts/img-post31.jpg"></a>
-                                        <span class="post_format theme_accent_bg icon-camera" data-categoryiconbg="00a0db" (click)="showModal(p);"></span>
-                                        <span class="post_category theme_accent_bg" [attr.data-categoryiconbg]="selectColorTypeProperty(p.type.type)">{{p.type.type}}</span>
-                                        <div class="post_content_wrapper theme_puzzles" data-puzzlecolor="111111">
-                                            <h2 class="post_subtitle"><a href="single-format-gallery.html">{{p.address}}</a></h2>
-                                            <div class="reviews_summary blog_reviews theme_puzzles">
-                                                <div class="criteria_summary criteria_row">
-                                                    <!--<ngl-rating [(rate)]="value" [isReadonly]="readonly" [size]="size" [colorOn]="color"></ngl-rating>-->
-                                                    <!--<ngl-rating [(rate)]="p.priority" [isReadonly]="true" [style.fon]></ngl-rating>-->
-                                                    <!--<sm-button class="positive disabled" icon="thumbs up">Click Me</sm-button>-->
-                                                    <!--<sm-rating class="massive star" [initialRating]="p.priority" [maxRating]="5" #rating></sm-rating>-->
-                                                    <div class="ui massive star rating" [attr.data-rating]="p.priority" [attr.data-max-rating]="5"></div>
-                                                    <!--                                                    <span class="criteria_stars" title="{{p.priority}} from 5">
-                                                                                                            <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                                                                                            <span class="stars_on" [attr.data-review]="+p.priority * 20"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                                                                                        </span>-->
-                                                    <!--<ngb-rating [max]="5" [rate]="p.priority" [readonly]="true"></ngb-rating>-->
-                                                </div>
-                                            </div>
-                                            <div class="post_descr"><p>{{p.references}}</p></div>
-                                            <div class="post_content_padding theme_puzzles"></div>
+                            <div class="sc_section sc_puzzles custom-container"> 
+                                <div *ngIf="!((properties | filterProperty:inputSearch.value)?.length) && !messageLoading" class="ui icon masive negative message">
+                                    <i class="search icon"></i>
+                                    <div class="content">
+                                        <div class="header">
+                                            0 Resultados...
                                         </div>
+                                        <p>Vuelva a intentarlo!</p>
                                     </div>
                                 </div>
-                                <!-- /puzzle item -->
+                                <div *ngIf="messageLoading" class="ui icon masive message">
+                                    <i class="notched circle loading icon"></i>
+                                    <div class="content">
+                                        <div class="header">
+                                            Unos segundos
+                                        </div>
+                                        <p>Cargando propiedades...</p>
+                                    </div>
+                                </div>
 
+                                <!-- puzzle item -->
+                                <div class="sc_blogger_item sc_blogger_item_puzzles" *ngFor="let p of properties | filterProperty:inputSearch.value; let i = index; let last = last;" [isLast]="last" (lastDone)="ngForPropertyItsDone()" >
+                                     <div class="post_thumb image_wrapper down-1">
+                                             <a href="single-format-gallery.html"><img alt="" src="uploads/property/{{p.imagesProperties[0].name}}"></a>
+                                             <span class="post_format theme_accent_bg icon-camera" data-categoryiconbg="00a0db" (click)="showModal(p);"></span>
+                                             <span class="post_category theme_accent_bg" [attr.data-categoryiconbg]="selectColorTypeProperty(p.type.type)">{{p.type.type}}</span>
+                                             <div class="post_content_wrapper theme_puzzles" data-puzzlecolor="111111">
+                                                 <h2 class="post_subtitle"><a href="single-format-gallery.html">{{p.state.state}}</a></h2>
+                                                 <div class="reviews_summary blog_reviews theme_puzzles">
+                                                     <div class="criteria_summary criteria_row">
+                                                         <!--<sm-rating class="massive star" [initialRating]="p.priority" [maxRating]="5" #rating></sm-rating>-->
+                                                         <div class="ui massive star rating" [attr.data-rating]="p.priority" [attr.data-max-rating]="5"></div>
+                                                     </div>
+                                                 </div>
+                                                 <div class="post_descr">
+                                                     <p>{{p.address}}</p>
+                                                     <p>{{p.description | truncate: [100]}}</p>
+                                                 </div>
+                                                 <h2 class=""><a href="single-format-gallery.html">{{p.price | currency:getCurrency(p.money):true:'3.2-2'}}</a></h2>
+                                                 <div class="post_content_padding theme_puzzles"></div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <!-- /puzzle item -->
+
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </article>
-            </div>
+                    </article>
+                </div>
 
-        </div><!-- #content -->
+            </div><!-- #content -->
 
-    </div><!-- #main_inner -->
+        </div><!-- #main_inner -->
 </div><!-- #main -->

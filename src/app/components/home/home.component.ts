@@ -1,25 +1,33 @@
 import { Component, ViewChild, ElementRef, OnInit, AfterViewChecked, Renderer, EventEmitter } from '@angular/core';
 import { PropertyService } from '../../services/property.service';
+import { UtilsService } from 'app/utils.service';
+import { IsLastDirective } from '../../directives/is-last.directive';
 declare var jQuery: any;
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
-    providers: [PropertyService]
+    providers: [PropertyService],
+//    directives: [IsLastDirective]
+    
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
     @ViewChild("myModalProperty") myModalProperty;
     input = new EventEmitter();
     properties = [];
-    public model = {};
-    //    modelsetter = false;
+    model = {};
+    messageLoading: Boolean;
 
-    constructor(private propertyService: PropertyService) {
-        //        this.elementRef = elementRef;
+    constructor(
+        private ps: PropertyService,
+        private us: UtilsService
+        ) {
+        this.messageLoading = true;
     }
 
     ngOnInit() {
+        //        this.us.delay(5000);
         this.listProperties();
         this.initSlider();
         //        this.modelsetter = false;
@@ -36,7 +44,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.stylePuzzlecolor();
         this.styleCategoryIconBg();
         this.styleReview();
-//                this.initSlider();
+        //                this.initSlider();
         jQuery('.ui.rating').rating('disable');
     }
 
@@ -48,9 +56,17 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
     showModal(model: any) {
         this.setModel(model);
-//        jQuery(".ui .dimmer .modals").css("z-index","2010");
-        this.myModalProperty.show();
-        //        this.initSlider();
+        this.initAccordion();
+        this.styleCategoryIconBg();
+        this.myModalProperty.show({
+            blurring: true,
+            //            inverted: true
+        });
+        this.initSlider();
+    }
+
+    getCurrency(money: any) {
+        return (money === "D") ? 'USD' : 'PEN';
     }
 
     selectColorTypeProperty(type) {
@@ -73,13 +89,24 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         return color;
     }
 
+    public ngForPropertyItsDone() {
+//        this.messageLoading = false;
+    }
+
     private listProperties() {
-        this.propertyService.list()
+        this.ps.list()
             .subscribe(
             data => this.properties = data,
             error => alert(error),
             () => console.log("# Finished list properties")
             );
+    }
+
+    private initAccordion() {
+        jQuery('.accordion').accordion({
+            exclusive: true,
+            on: "mouseenter"
+        });
     }
 
     private initSlider() {
@@ -111,9 +138,16 @@ export class HomeComponent implements OnInit, AfterViewChecked {
             });
             //Slider
             var arrSlides = jQuery('[data-slide]');
+            console.log('# data slides: ' + arrSlides.length);
             jQuery.each(arrSlides, function() {
                 var slideUrl = jQuery(this).attr('data-slide');
                 jQuery(this).css("background-image", "url(" + slideUrl + ")")
+            }
+            );
+            var arrSlideTextBg = jQuery('[data-slidetextbg]');
+            jQuery.each(arrSlideTextBg, function() {
+                var slideTextBg = jQuery(this).attr('data-slidetextbg');
+                jQuery(this).css("background-color", slideTextBg)
             }
             );
         });
@@ -123,7 +157,6 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         var arrPuzzleColor = jQuery('[data-puzzlecolor]');
         console.log('# data puzzle color: ' + arrPuzzleColor.length);
         jQuery.each(arrPuzzleColor, function(index) {
-            //            console.log('#' + index + ' data puzzle color');
             var puzzleColor = jQuery(this).attr('data-puzzlecolor');
             var clr = HomeComponent.HexToRGB(puzzleColor);
             jQuery(this).css("background-color", '#' + puzzleColor);
@@ -134,6 +167,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
     private styleCategoryIconBg() {
         var arrCategoryIconBg = jQuery('[data-categoryiconbg]');
+        console.log('# data Category Icon Bg: ' + arrCategoryIconBg.length);
         jQuery.each(arrCategoryIconBg, function() {
             var CategoryIconBg = jQuery(this).attr('data-categoryiconbg');
             jQuery(this).css("background-color", '#' + CategoryIconBg)
@@ -143,6 +177,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
     private styleReview() {
         var arrReview = jQuery('[data-review]');
+        console.log('# data Review: ' + arrReview.length);
         jQuery.each(arrReview, function() {
             var reviewPercent = jQuery(this).attr('data-review');
             jQuery(this).css("width", reviewPercent + '%');

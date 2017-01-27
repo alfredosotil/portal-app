@@ -8,6 +8,7 @@ import { NgSemanticModule } from 'ng-semantic';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { GlobalService } from './global.service';
+import { UtilsService } from './utils.service';
 import { PropertyService } from './services/property.service';
 
 import { AppComponent } from './app.component';
@@ -19,8 +20,9 @@ import { MusicComponent } from './components/music/music.component';
 import { GiftsComponent } from './components/gifts/gifts.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { SearchComponent } from './components/search/search.component';
-import { FilterStatePropertyPipe } from './pipes/filter-state-property.pipe';
-import { FilterTypePropertyPipe } from './pipes/filter-type-property.pipe';
+import { FilterPropertyPipe } from './pipes/filter-property.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
+import { IsLastDirective } from './directives/is-last.directive';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [
         AppComponent,
+        //        Components
         MainComponent,
         HomeComponent,
         BlogComponent,
@@ -50,22 +53,26 @@ const appRoutes: Routes = [
         GiftsComponent,
         ContactusComponent,
         SearchComponent,
-        FilterStatePropertyPipe,
-        FilterTypePropertyPipe
+        //        Pipes
+        FilterPropertyPipe,
+        TruncatePipe,
+        IsLastDirective
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         RouterModule.forRoot(appRoutes),
-//        NgbModule.forRoot(),
+        //        NgbModule.forRoot(),
         NglModule.forRoot({
             svgPath: 'assets',
         }),
         NgSemanticModule
     ],
     providers: [
+//        App
         GlobalService,
+        UtilsService,
         PropertyService
     ],
     bootstrap: [AppComponent]
