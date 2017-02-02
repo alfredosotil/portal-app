@@ -260,20 +260,20 @@ jQuery(document).ready(function() {
 	});
 
 	// Search link
-	jQuery('.search_link').click(function(e) {
-		"use strict";
-		jQuery('.search_form_area').addClass('shown').removeClass('hidden');
-		jQuery('.search_field').focus();
-                e.preventDefault();
-		return false;
-	});
-	jQuery('.search_close').click(function(e) {
-		"use strict";
-		jQuery('.search_form_area').removeClass('shown').addClass('hidden');
-                jQuery('.search_field').val("");
-		e.preventDefault();
-		return false;
-	});
+//	jQuery('.search_link').click(function(e) {
+//		"use strict";
+//		jQuery('.search_form_area').addClass('shown').removeClass('hidden');
+//		jQuery('.search_field').focus();
+//                e.preventDefault();
+//		return false;
+//	});
+//	jQuery('.search_close').click(function(e) {
+//		"use strict";
+//		jQuery('.search_form_area').removeClass('shown').addClass('hidden');
+//                jQuery('.search_field').val("");
+//		e.preventDefault();
+//		return false;
+//	});
 
 	// Login & registration link
 	jQuery('.link_login,.link_register,.popup_form .popup_title .popup_close').click(function(e) {

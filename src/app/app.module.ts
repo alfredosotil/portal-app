@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NglModule } from 'ng-lightning/ng-lightning';
 import { NgSemanticModule } from 'ng-semantic';
+import { Ng2MapModule} from 'ng2-map';
+import { Ng2MapComponent } from 'ng2-map';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { GlobalService } from './global.service';
@@ -67,7 +69,8 @@ const appRoutes: Routes = [
         NglModule.forRoot({
             svgPath: 'assets',
         }),
-        NgSemanticModule
+        NgSemanticModule,
+        Ng2MapModule
     ],
     providers: [
 //        App
@@ -77,4 +80,8 @@ const appRoutes: Routes = [
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+    constructor(){
+        Ng2MapComponent['apiUrl'] = 'https://maps.google.com/maps/api/js?key=AIzaSyCuHHxRJnJZ3ft03gkqcHyBRZQ13lJnOII';
+    }
+}

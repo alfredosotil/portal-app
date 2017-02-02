@@ -1,7 +1,7 @@
-import { Component, ViewChild, ElementRef, OnInit, AfterViewChecked, Renderer, EventEmitter } from '@angular/core';
+import { Component, ViewChild, OnInit, AfterViewChecked, EventEmitter } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { PropertyService } from '../../services/property.service';
 import { UtilsService } from 'app/utils.service';
-import { IsLastDirective } from '../../directives/is-last.directive';
 declare var jQuery: any;
 
 @Component({
@@ -9,60 +9,46 @@ declare var jQuery: any;
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
     providers: [PropertyService],
-//    directives: [IsLastDirective]
-    
+    //    directives: [IsLastDirective]
+
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
     @ViewChild("myModalProperty") myModalProperty;
     input = new EventEmitter();
     properties = [];
     model = {};
-    messageLoading: Boolean;
+    isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     constructor(
         private ps: PropertyService,
         private us: UtilsService
-        ) {
-        this.messageLoading = true;
-    }
+    ) { }
 
     ngOnInit() {
-        //        this.us.delay(5000);
+        this.initSearchLink();
         this.listProperties();
-        this.initSlider();
-        //        this.modelsetter = false;
+        jQuery('.ui.rating').rating('disable');
     }
 
     ngAfterViewInit() {
-        //        this.styleDivs();
-        //        jQuery( document ).ready(function() {
-        //        console.log("jQuery is ready");
-        //      });
     }
 
     ngAfterViewChecked() {
         this.stylePuzzlecolor();
         this.styleCategoryIconBg();
         this.styleReview();
-        //                this.initSlider();
-        jQuery('.ui.rating').rating('disable');
-    }
-
-    onEvent(event: Event) {
-        //        event.preventDefault();
-        //        event.stopPropagation();
-        console.log(event);
+        //        this.initSlider();
     }
 
     showModal(model: any) {
         this.setModel(model);
         this.initAccordion();
         this.styleCategoryIconBg();
+        this.initSlider();
         this.myModalProperty.show({
             blurring: true,
-            //            inverted: true
+            //                        inverted: true
         });
-        this.initSlider();
     }
 
     getCurrency(money: any) {
@@ -89,16 +75,13 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         return color;
     }
 
-    public ngForPropertyItsDone() {
-//        this.messageLoading = false;
-    }
-
     private listProperties() {
+        this.isLoading$.next(true);
         this.ps.list()
             .subscribe(
             data => this.properties = data,
             error => alert(error),
-            () => console.log("# Finished list properties")
+            () => this.isLoading$.next(false)
             );
     }
 
@@ -109,53 +92,72 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         });
     }
 
-    private initSlider() {
-        jQuery('.sc_slider_flex').each(function() {
-            "use strict";
-            if (jQuery(this).hasClass('inited')) return;
-            jQuery(this).addClass('inited').flexslider({
-                directionNav: true,
-                prevText: '',
-                nextText: '',
-                controlNav: jQuery(this).hasClass('sc_slider_controls'),
-                animation: 'fade',
-                animationLoop: true,
-                slideshow: true,
-                slideshowSpeed: 7000,
-                animationSpeed: 600,
-                pauseOnAction: true,
-                pauseOnHover: true,
-                useCSS: false,
-                manualControls: ''
-                /*
-                start: function(slider){},
-                before: function(slider){},
-                after: function(slider){},
-                end: function(slider){},              
-                added: function(){},            
-                removed: function(){} 
-                */
-            });
-            //Slider
+    public initSlider() {
+        //Slider
+        setTimeout(function() {
             var arrSlides = jQuery('[data-slide]');
-            console.log('# data slides: ' + arrSlides.length);
             jQuery.each(arrSlides, function() {
                 var slideUrl = jQuery(this).attr('data-slide');
                 jQuery(this).css("background-image", "url(" + slideUrl + ")")
-            }
-            );
+            });
             var arrSlideTextBg = jQuery('[data-slidetextbg]');
             jQuery.each(arrSlideTextBg, function() {
                 var slideTextBg = jQuery(this).attr('data-slidetextbg');
                 jQuery(this).css("background-color", slideTextBg)
-            }
-            );
+            });
+
+            jQuery('.sc_slider_flex').each(function() {
+                "use strict";
+                //            if (jQuery(this).hasClass('inited')) jQuery(this).removeData("flexslider");
+                jQuery(this).removeData("flexslider");
+                jQuery(this).flexslider({
+                    directionNav: true,
+                    prevText: '',
+                    nextText: '',
+                    controlNav: jQuery(this).hasClass('sc_slider_controls'),
+                    animation: 'fade',
+                    animationLoop: true,
+                    slideshow: true,
+                    slideshowSpeed: 5000,
+                    animationSpeed: 500,
+                    pauseOnAction: true,
+                    pauseOnHover: true,
+                    useCSS: false,
+                    manualControls: ''
+                    /*
+                    start: function(slider){},
+                    before: function(slider){},
+                    after: function(slider){},
+                    end: function(slider){},              
+                    added: function(){},            
+                    removed: function(){} 
+                    */
+                });
+            });
+        }, 200);
+
+    }
+
+    private initSearchLink() {
+        jQuery('.search_link').click(function(e) {
+            "use strict";
+            jQuery('.search_form_area').addClass('shown').removeClass('hidden');
+            jQuery('.search_field').focus();
+            e.preventDefault();
+            return false;
+        });
+        jQuery('.search_close').click(function(e) {
+            "use strict";
+            jQuery('.search_form_area').removeClass('shown').addClass('hidden');
+            jQuery('.search_field').val("");
+            e.preventDefault();
+            return false;
         });
     }
 
     private stylePuzzlecolor() {
         var arrPuzzleColor = jQuery('[data-puzzlecolor]');
-        console.log('# data puzzle color: ' + arrPuzzleColor.length);
+        //        console.log('# data puzzle color: ' + arrPuzzleColor.length);
         jQuery.each(arrPuzzleColor, function(index) {
             var puzzleColor = jQuery(this).attr('data-puzzlecolor');
             var clr = HomeComponent.HexToRGB(puzzleColor);
@@ -167,7 +169,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
     private styleCategoryIconBg() {
         var arrCategoryIconBg = jQuery('[data-categoryiconbg]');
-        console.log('# data Category Icon Bg: ' + arrCategoryIconBg.length);
+        //        console.log('# data Category Icon Bg: ' + arrCategoryIconBg.length);
         jQuery.each(arrCategoryIconBg, function() {
             var CategoryIconBg = jQuery(this).attr('data-categoryiconbg');
             jQuery(this).css("background-color", '#' + CategoryIconBg)
@@ -177,7 +179,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
     private styleReview() {
         var arrReview = jQuery('[data-review]');
-        console.log('# data Review: ' + arrReview.length);
+        //        console.log('# data Review: ' + arrReview.length);
         jQuery.each(arrReview, function() {
             var reviewPercent = jQuery(this).attr('data-review');
             jQuery(this).css("width", reviewPercent + '%');
