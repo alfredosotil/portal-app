@@ -105,15 +105,15 @@ jQuery(document).ready(function() {
 
 	// Puzzle color
 
-//	var arrPuzzleColor = jQuery('[data-puzzlecolor]');
-//        console.log('# data puzzle color');
-//	jQuery.each(arrPuzzleColor, function(){
-//		var puzzleColor = jQuery(this).attr('data-puzzlecolor');
-//		var clr = HexToRGB(puzzleColor);
-//		jQuery(this).css("background-color", '#'+puzzleColor);
-//		jQuery(this).find('.reviews_summary').css("background-color", '#'+puzzleColor)
-//		jQuery(this).find('.post_content_padding').attr('style', 'background: -moz-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%, rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%, rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%);	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba('+clr.r+','+clr.g+','+clr.b+',0)), color-stop(1%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01)), color-stop(50%,rgba('+clr.r+','+clr.g+','+clr.b+',1)));	background: -webkit-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); background: -o-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); background: -ms-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%);	background: linear-gradient(to bottom,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00'+puzzleColor+'", endColorstr='+puzzleColor+',GradientType=0 );');
-//		});
+	var arrPuzzleColor = jQuery('[data-puzzlecolor]');
+        console.log('# data puzzle color');
+	jQuery.each(arrPuzzleColor, function(){
+		var puzzleColor = jQuery(this).attr('data-puzzlecolor');
+		var clr = HexToRGB(puzzleColor);
+		jQuery(this).css("background-color", '#'+puzzleColor);
+		jQuery(this).find('.reviews_summary').css("background-color", '#'+puzzleColor)
+		jQuery(this).find('.post_content_padding').attr('style', 'background: -moz-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%, rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%, rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%);	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba('+clr.r+','+clr.g+','+clr.b+',0)), color-stop(1%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01)), color-stop(50%,rgba('+clr.r+','+clr.g+','+clr.b+',1)));	background: -webkit-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); background: -o-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); background: -ms-linear-gradient(top,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%);	background: linear-gradient(to bottom,  rgba('+clr.r+','+clr.g+','+clr.b+',0) 0%,rgba('+clr.r+','+clr.g+','+clr.b+',0.01) 1%,rgba('+clr.r+','+clr.g+','+clr.b+',1) 50%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00'+puzzleColor+'", endColorstr='+puzzleColor+',GradientType=0 );');
+		});
 
 	// Skills
 
@@ -127,28 +127,28 @@ jQuery(document).ready(function() {
 
 	//Slider
 
-//	var arrSlides = jQuery('[data-slide]');	
-//	jQuery.each(arrSlides, function(){
-//		var slideUrl = jQuery(this).attr('data-slide');
-//		jQuery(this).css("background-image", "url("+slideUrl+")")
-//		}
-//	);
-//
-//	var arrSlideTextBg = jQuery('[data-slidetextbg]');	
-//	jQuery.each(arrSlideTextBg, function(){
-//		var slideTextBg = jQuery(this).attr('data-slidetextbg');
-//		jQuery(this).css("background-color", slideTextBg)
-//		}
-//	);
+	var arrSlides = jQuery('[data-slide]');	
+	jQuery.each(arrSlides, function(){
+		var slideUrl = jQuery(this).attr('data-slide');
+		jQuery(this).css("background-image", "url("+slideUrl+")")
+		}
+	);
+
+	var arrSlideTextBg = jQuery('[data-slidetextbg]');	
+	jQuery.each(arrSlideTextBg, function(){
+		var slideTextBg = jQuery(this).attr('data-slidetextbg');
+		jQuery(this).css("background-color", slideTextBg)
+		}
+	);
 
 	//Category Icon Bg
 
-//	var arrCategoryIconBg = jQuery('[data-categoryiconbg]');	
-//	jQuery.each(arrCategoryIconBg, function(){
-//		var CategoryIconBg = jQuery(this).attr('data-categoryiconbg');
-//		jQuery(this).css("background-color", '#'+CategoryIconBg)
-//		}
-//	);
+	var arrCategoryIconBg = jQuery('[data-categoryiconbg]');	
+	jQuery.each(arrCategoryIconBg, function(){
+		var CategoryIconBg = jQuery(this).attr('data-categoryiconbg');
+		jQuery(this).css("background-color", '#'+CategoryIconBg)
+		}
+	);
 
 	// Accordion1
 									
@@ -260,20 +260,20 @@ jQuery(document).ready(function() {
 	});
 
 	// Search link
-//	jQuery('.search_link').click(function(e) {
-//		"use strict";
-//		jQuery('.search_form_area').addClass('shown').removeClass('hidden');
-//		jQuery('.search_field').focus();
-//                e.preventDefault();
-//		return false;
-//	});
-//	jQuery('.search_close').click(function(e) {
-//		"use strict";
-//		jQuery('.search_form_area').removeClass('shown').addClass('hidden');
-//                jQuery('.search_field').val("");
-//		e.preventDefault();
-//		return false;
-//	});
+	jQuery('.search_link').click(function(e) {
+		"use strict";
+		jQuery('.search_form_area').addClass('shown').removeClass('hidden');
+		jQuery('.search_field').focus();
+                e.preventDefault();
+		return false;
+	});
+	jQuery('.search_close').click(function(e) {
+		"use strict";
+		jQuery('.search_form_area').removeClass('shown').addClass('hidden');
+                jQuery('.search_field').val("");
+		e.preventDefault();
+		return false;
+	});
 
 	// Login & registration link
 	jQuery('.link_login,.link_register,.popup_form .popup_title .popup_close').click(function(e) {
@@ -417,9 +417,9 @@ jQuery(document).ready(function() {
 
 
 	// Main menu
-//	if (THEMEREX_mainMenuMobile) {
-//		jQuery('#mainmenu').mobileMenu({mobileWidth: THEMEREX_mainMenuMobileWidth});
-//	}
+	if (THEMEREX_mainMenuMobile) {
+		jQuery('#mainmenu').mobileMenu({mobileWidth: THEMEREX_mainMenuMobileWidth});
+	}
 	if (THEMEREX_mainMenuSlider) {
 		jQuery('#mainmenu').spasticNav();
 	}
@@ -435,27 +435,27 @@ jQuery(document).ready(function() {
 		speedOut: 'fast',
 		delay: 100
 	});
-//
-//	jQuery('#mainmenu .sf-sub-indicator').addClass('icon-right-open').html('');
-//	if (THEMEREX_mainMenuFixed && jQuery('#header_middle').length > 0) {
-//		var menu_offset = jQuery('#header_middle').offset().top;
-//		jQuery(window).resize(function(){
-//			var winWidth =  document.body.clientWidth;
-//			if (winWidth < 800) jQuery('body').addClass('menu_mobile');
-//			if (winWidth >= 800) jQuery('body').removeClass('menu_mobile');
-//		});
-//		jQuery(window).scroll(function() {
-//			"use strict";
-//			
-//			if (jQuery('body').hasClass('menu_mobile')) return;
-//			var s = jQuery(this).scrollTop();
-//			if (s >= menu_offset) {
-//				jQuery('body').addClass('menu_fixed');
-//			} else {
-//				jQuery('body').removeClass('menu_fixed');
-//			}
-//		});
-//	}
+
+	jQuery('#mainmenu .sf-sub-indicator').addClass('icon-right-open').html('');
+	if (THEMEREX_mainMenuFixed && jQuery('#header_middle').length > 0) {
+		var menu_offset = jQuery('#header_middle').offset().top;
+		jQuery(window).resize(function(){
+			var winWidth =  document.body.clientWidth;
+			if (winWidth < 800) jQuery('body').addClass('menu_mobile');
+			if (winWidth >= 800) jQuery('body').removeClass('menu_mobile');
+		});
+		jQuery(window).scroll(function() {
+			"use strict";
+			
+			if (jQuery('body').hasClass('menu_mobile')) return;
+			var s = jQuery(this).scrollTop();
+			if (s >= menu_offset) {
+				jQuery('body').addClass('menu_fixed');
+			} else {
+				jQuery('body').removeClass('menu_fixed');
+			}
+		});
+	}
 
 	// Side menu builder
 	if (jQuery('#sidemenu_link').length > 0) {
@@ -1023,33 +1023,33 @@ function initPostFormats() {
 		});
 
 	// Galleries Slider
-//	jQuery('.sc_slider_flex').each(function () {
-//		"use strict";
-//		if (jQuery(this).hasClass('inited')) return;
-//		jQuery(this).addClass('inited').flexslider({
-//			directionNav: true,
-//			prevText: '',
-//			nextText: '',
-//			controlNav: jQuery(this).hasClass('sc_slider_controls'),
-//			animation: 'fade',
-//			animationLoop: true,
-//			slideshow: true,
-//			slideshowSpeed: 7000,
-//			animationSpeed: 600,
-//			pauseOnAction: true,
-//			pauseOnHover: true,
-//			useCSS: false,
-//			manualControls: ''
-//			/*
-//			start: function(slider){},
-//			before: function(slider){},
-//			after: function(slider){},
-//			end: function(slider){},              
-//			added: function(){},            
-//			removed: function(){} 
-//			*/
-//		});
-//	});
+	jQuery('.sc_slider_flex').each(function () {
+		"use strict";
+		if (jQuery(this).hasClass('inited')) return;
+		jQuery(this).addClass('inited').flexslider({
+			directionNav: true,
+			prevText: '',
+			nextText: '',
+			controlNav: jQuery(this).hasClass('sc_slider_controls'),
+			animation: 'fade',
+			animationLoop: true,
+			slideshow: true,
+			slideshowSpeed: 7000,
+			animationSpeed: 600,
+			pauseOnAction: true,
+			pauseOnHover: true,
+			useCSS: false,
+			manualControls: ''
+			/*
+			start: function(slider){},
+			before: function(slider){},
+			after: function(slider){},
+			end: function(slider){},              
+			added: function(){},            
+			removed: function(){} 
+			*/
+		});
+	});
 	
 	// Add video on thumb click
 	jQuery('.post_thumb .post_video_play').each(function () {
