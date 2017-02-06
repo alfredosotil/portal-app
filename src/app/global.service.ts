@@ -17,6 +17,14 @@ export class GlobalService {
         return this.inputSearch$.getValue();
     }
 
+    set inputSearch(is: string) {
+        this.inputSearch$.next(is);
+    }
+
+    get inputSearch() {
+        return this.inputSearch$.getValue();
+    }
+
     getApiRestUrl() {
         return this.hostUrl + 'web/';
     }
