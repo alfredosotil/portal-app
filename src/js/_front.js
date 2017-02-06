@@ -1167,12 +1167,12 @@ function HexToRGB(hex_clr){
 /* Show/Hide "to Top" button */
 function showToTop() {
 	"use strict";
-//	var s = jQuery(document).scrollTop();
-//	if (s >= 110) {
-//		jQuery('#toTop').show();
-//	} else {
-//		jQuery('#toTop').hide();	
-//	}
+	var s = jQuery(document).scrollTop();
+	if (s >= 110) {
+		jQuery('#toTop').show();
+	} else {
+		jQuery('#toTop').hide();	
+	}
 }
 
 /* Infinite Scroll */

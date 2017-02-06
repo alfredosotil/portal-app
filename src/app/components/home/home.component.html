@@ -23,39 +23,40 @@
                                             <span class="stars_on" data-review="92"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
                                         </span>
                                     </div>
-                                    <h2 class="sc_slider_subtitle">
-                                        <a href="single-format-quote.html">En {{model?.state?.state}}</a>
-                                    </h2>
-                                    <div class="sc_slider_descr">{{model?.price | currency:getCurrency(model?.money):true:'3.2-2'}}</div>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>      
-    
-                </div>            
-                 #slider 
-                <div class="ui styled fluid accordion">
-                    <div class="title active">
-                        <i class="dropdown icon"></i>
-                        Referencias
-                    </div>
-                    <div class="content active">
-                        <p class="transition visible">{{model?.references}}</p>
-                    </div>
-                    <div class="title">
-                        <i class="dropdown icon"></i>
-                        Descripcion del Inmueble
-                    </div>
-                    <div class="content">
-                        <p class="transition visible">{{model?.description}}</p>
-                    </div>
-                    <div class="title">
-                        <i class="dropdown icon"></i>
-                        Datos del Agente
-                    </div>
-                    <div class="content">
-                        <p class="transition visible">{{model?.agent?.names}} {{model?.agent?.surnames}}</p>
-                    </div>
+                                <h2 class="sc_slider_subtitle">
+                                    <a href="single-format-quote.html">En {{model?.state?.state}}</a>
+                                </h2>
+                                <div class="sc_slider_descr">{{model?.price | currency:getCurrency(model?.money):true:'3.2-2'}}</div>
+                            </div>
+                        </li>
+                        <!-- /slider item -->                                                       
+                    </ul>
+                </div>      
+
+            </div>            
+            <!-- #slider -->
+            <div class="ui styled fluid accordion">
+                <div class="title active">
+                    <i class="dropdown icon"></i>
+                    Referencias
+                </div>
+                <div class="content active">
+                    <p class="transition visible">{{model?.references}}</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Descripcion del Inmueble
+                </div>
+                <div class="content">
+                    <p class="transition visible">{{model?.description}}</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Datos del Agente
+                </div>
+                <div class="content">
+                    <p class="transition visible">{{model?.agent?.names}} {{model?.agent?.surnames}}</p>
                 </div>
             </div>
         </div>
