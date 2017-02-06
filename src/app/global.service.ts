@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class GlobalService {
-    hostUrl: string = '';
+    private inputSearch$ = new BehaviorSubject<string>('');
+    private hostUrl: string = '';
     constructor() {
         this.hostUrl = 'http://localhost/portal-api/';
+    }
+
+    set inputSearch(is: string) {
+        this.inputSearch$.next(is);
+    }
+
+    get inputSearch() {
+        return this.inputSearch$.getValue();
     }
 
     getApiRestUrl() {

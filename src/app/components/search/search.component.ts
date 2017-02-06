@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit, AfterViewChecked, EventEmitter } from '@a
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { PropertyService } from '../../services/property.service';
 import { UtilsService } from 'app/utils.service';
+import { GlobalService } from 'app/global.service';
 
 @Component({
     selector: 'app-search',
@@ -16,7 +17,8 @@ export class SearchComponent implements OnInit {
     isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
     constructor(
         private ps: PropertyService,
-        private us: UtilsService
+        private us: UtilsService,
+        private gs: GlobalService,
     ) { }
 
     ngOnInit() {

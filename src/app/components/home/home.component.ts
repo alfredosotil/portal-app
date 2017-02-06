@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit, AfterViewChecked, EventEmitter } from '@a
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { PropertyService } from '../../services/property.service';
 import { UtilsService } from 'app/utils.service';
+import { GlobalService } from 'app/global.service';
 declare var jQuery: any;
 
 @Component({
@@ -21,13 +22,13 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
     constructor(
         private ps: PropertyService,
-        private us: UtilsService
+        private us: UtilsService,
+        private gs: GlobalService,
     ) { }
 
     ngOnInit() {
         this.initSearchLink();
         this.listProperties();
-        jQuery('.ui.rating').rating('disable');
     }
 
     ngAfterViewInit() {
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.stylePuzzlecolor();
         this.styleCategoryIconBg();
         this.styleReview();
+        jQuery('.ui.rating').rating('disable');
         //        this.initSlider();
     }
 
@@ -45,10 +47,11 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.initAccordion();
         this.styleCategoryIconBg();
         this.initSlider();
-        this.myModalProperty.show({
-            blurring: true,
-            //                        inverted: true
-        });
+        jQuery('.ui.modal').modal('show');
+        //        this.myModalProperty.show({
+        //            blurring: true,
+        //            //                        inverted: true
+        //        });
     }
 
     getCurrency(money: any) {
