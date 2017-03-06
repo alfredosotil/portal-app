@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { NglModule } from 'ng-lightning/ng-lightning';
-import { NgSemanticModule } from 'ng-semantic';
 import { Ng2MapModule} from 'ng2-map';
 import { Ng2MapComponent } from 'ng2-map';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -64,12 +62,7 @@ const appRoutes: Routes = [
         BrowserModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot(appRoutes),
-        //        NgbModule.forRoot(),
-        NglModule.forRoot({
-            svgPath: 'assets',
-        }),
-        NgSemanticModule,
+        RouterModule.forRoot(appRoutes), 
         Ng2MapModule
     ],
     providers: [

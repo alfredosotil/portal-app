@@ -1,104 +1,104 @@
 {
-    "project": {
-        "version": "1.0.0-beta.24",
-        "name": "portal-app"
-    },
-    "apps": [
-        {
-            "root": "src",
-            "outDir": "dist",
-            "assets": [
-                "assets",
-                "icon",
-                "images",
-                "images_posts",
-                "uploads",
-                "favicon.ico"
-                ],
-            "index": "index.html",
-            "main": "main.ts",
-            "test": "test.ts",
-            "tsconfig": "tsconfig.json",
-            "prefix": "app",
-            "mobile": false,
-            "styles": [
-                "styles.css",                
-                "./icon/fontello/css/fontello.css",
-                "./icon/fontello/css/animation.css",
-                "./css/shortcodes.css",
-                "./css/color.css",
-                "./css/style.css",
-                "./css/themes/regular.css",
-                "./css/themes/redlight.css",
-                "./css/themes/red.css",
-                "./css/themes/dark.css",
-                "./css/themes/blue.css",
-                "./css/themes/green.css",
-                "./css/themes/yellowdark.css",
-                "./css/themes/yellowlight.css",
-                "./css/themes/orange.css",
-                "./css/responsive.css",
-                "./semantic/semantic.min.css",   
-                "./js/prettyphoto/css/prettyPhoto.css",
-                "./js/mediaplayer/mediaelementplayer.css"
-            ],
-            "scripts": [
-                "./js/jquery/jquery.js",
-                "./js/jquery/jquery-migrate.min.js",
-                "./js/jquery/ui/jquery-ui-1.10.4.custom.js",
-                "./js/jquery.cookie.js",
-                "./js/jquery.easing.js",
-                "./semantic/semantic.min.js",                
-                "./js/superfish.js",
-                "./js/jquery.mobilemenu.min.js",
-                "./js/jquery.slidemenu.js",
-                "./js/skip-link-focus-fix.js",                
-                "./js/_utils.js",                
-                "./js/_googlemap_init.js",                
-                "./js/_front.js",                
-                "./js/_reviews.js",                
-                "./js/_contact_form.js",                
-                "./js/prettyphoto/jquery.prettyPhoto.minca7f.js?ver=no-compose",                
-                "./js/jquery.flexslider.min.js",                
-                "./js/mediaplayer/mediaelement-and-player.min.js",                
-                "./js/jquery/ui/jquery.ui.core.min.js",
-                "./js/jquery/ui/jquery.ui.widget.min.js",
-                "./js/jquery/ui/jquery.ui.mouse.min.js",
-                "./js/jquery/ui/jquery.ui.draggable.min.js"                           
-            ],
-            "environments": {
-                "source": "environments/environment.ts",
-                "dev": "environments/environment.ts",
-                "prod": "environments/environment.prod.ts"
-            }
-        }
-    ],
-    "addons": [],
-    "packages": [],
-    "e2e": {
-        "protractor": {
-            "config": "./protractor.conf.js"
-        }
-    },
-    "test": {
-        "karma": {
-            "config": "./karma.conf.js"
-        }
-    },
-    "defaults": {
-        "styleExt": "css",
-        "prefixInterfaces": false,
-        "inline": {
-            "style": false,
-            "template": false
-        },
-        "spec": {
-            "class": false,
-            "component": true,
-            "directive": true,
-            "module": false,
-            "pipe": true,
-            "service": true
-        }
+  "project": {
+    "version": "1.0.0-beta.24",
+    "name": "portal-app"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+       "assets",
+       "icon",
+       "images",
+       "images_posts",
+       "uploads",
+       "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "styles.css",                
+        "./icon/fontello/css/fontello.css",
+        "./icon/fontello/css/animation.css",
+        "./css/shortcodes.css",
+        "./css/color.css",
+        "./css/style.css",
+        "./css/themes/regular.css",
+        "./css/themes/redlight.css",
+        "./css/themes/red.css",
+        "./css/themes/dark.css",
+        "./css/themes/blue.css",
+        "./css/themes/green.css",
+        "./css/themes/yellowdark.css",
+        "./css/themes/yellowlight.css",
+        "./css/themes/orange.css",
+        "./css/responsive.css",
+        "../node_modules/semantic-ui/dist/semantic.min.css",
+        "./js/prettyphoto/css/prettyPhoto.css",
+        "./js/mediaplayer/mediaelementplayer.css"
+      ],
+      "scripts": [
+        "./js/jquery/jquery.js",
+        "./js/jquery/jquery-migrate.min.js",
+        "./js/jquery/ui/jquery-ui-1.10.4.custom.js",
+        "./js/jquery.cookie.js",
+        "./js/jquery.easing.js",
+        "../node_modules/semantic-ui/dist/semantic.min.js",
+        "./js/superfish.js",
+        "./js/jquery.mobilemenu.min.js",
+        "./js/jquery.slidemenu.js",
+        "./js/skip-link-focus-fix.js",                
+        "./js/_utils.js",                
+        "./js/_googlemap_init.js",                
+        "./js/_front.js",                
+        "./js/_reviews.js",                
+        "./js/_contact_form.js",                
+        "./js/prettyphoto/jquery.prettyPhoto.minca7f.js?ver=no-compose",                
+        "./js/jquery.flexslider.min.js",                
+        "./js/mediaplayer/mediaelement-and-player.min.js",                
+        "./js/jquery/ui/jquery.ui.core.min.js",
+        "./js/jquery/ui/jquery.ui.widget.min.js",
+        "./js/jquery/ui/jquery.ui.mouse.min.js",
+        "./js/jquery/ui/jquery.ui.draggable.min.js"
+      ],
+      "environments": {
+        "source": "environments/environment.ts",
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
     }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "prefixInterfaces": false,
+    "inline": {
+      "style": false,
+      "template": false
+    },
+    "spec": {
+      "class": false,
+      "component": true,
+      "directive": true,
+      "module": false,
+      "pipe": true,
+      "service": true
+    }
+  }
 }
