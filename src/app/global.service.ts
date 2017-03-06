@@ -6,7 +6,8 @@ export class GlobalService {
     private inputSearch$ = new BehaviorSubject<string>('');
     private hostUrl: string = '';
     constructor() {
-        this.hostUrl = 'http://localhost/portal-api/';
+//        this.hostUrl = 'http://localhost/portal-api/';
+        this.hostUrl = 'https://coarkpro.com/portal-api/';
     }
 
     set inputSearch(is: string) {
