@@ -9,11 +9,11 @@
 
             <a href="#" class="share-item" onclick="trexShareFacebook()" data-count="facebook"><img src="images/socials/facebook.png" alt="facebook"></a>
 
-            <a href="#" class="share-item" onclick="trexShareGplus()" data-count="gplus"><img src="images/socials/gplus.png" alt="gplus"></a>
+            <!--<a href="#" class="share-item" onclick="trexShareGplus()" data-count="gplus"><img src="images/socials/gplus.png" alt="gplus"></a>-->
 
             <a href="#" class="share-item" onclick="trexShareLinkedin()" data-count="linkedin"><img src="images/socials/linkedin.png" alt="linkedin"></a>
 
-            <a href="#" class="share-item" onclick="trexSharePinterest()" data-count="pinterest"><img src="images/socials/pinterest.png" alt="pinterest"></a>
+            <!--<a href="#" class="share-item" onclick="trexSharePinterest()" data-count="pinterest"><img src="images/socials/pinterest.png" alt="pinterest"></a>-->
         </div>			
     </div>
     <!-- #socials -->
@@ -37,7 +37,7 @@
                 <div id="header_middle_inner">
                     <div class="search_form_area theme_body">
                         <form class="search_form"><input class="search_field" type="search" placeholder="Escribe tu busqueda con palabras claves ..." #inputSearch (keyup)="gs.inputSearch = inputSearch.value" (change)="gs.inputSearch = inputSearch.value" name="s"></form>
-                        <a href="#" class="search_close" (click)="gs.inputSearch = ''"><span class="icon-cancel-circled"></span></a>
+                        <a href="#" class="search_close" (click)="closeSearch()"><span class="icon-cancel-circled"></span></a>
                     </div>
                     <!-- main menu -->
                     <nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
@@ -64,7 +64,7 @@
                                 <a routerLink="/contactus">Contactanos</a>
                             </li>
                         </ul>	
-                        <a href="#" class="search_link"><span class="icon-search"></span></a>
+                        <a href="#" class="search_link" (click)="openSearch()"><span class="icon-search"></span></a>
                     </nav>
                     <!-- #main menu -->
                 </div>
@@ -149,16 +149,16 @@
     <!-- Login Register Form -->
     <div id="popup_login" class="popup_form">
         <div class="popup_body theme_article">
-            <h4 class="popup_title">Login</h4>
+            <h4 class="popup_title">Inicia Sesion</h4>
             <form action="#" method="post" name="login_form">
-                <div class="popup_field"><input type="text" name="log" id="log" placeholder="Login*" /></div>
-                <div class="popup_field"><input type="password" name="pwd" id="pwd" placeholder="Password*" /></div>
-                <div class="popup_field popup_button"><a href="#" class="theme_button">Login</a></div>
+                <div class="popup_field"><input type="text" name="log" id="log" placeholder="Usuario*" /></div>
+                <div class="popup_field"><input type="password" name="pwd" id="pwd" placeholder="Clave*" /></div>
+                <div class="popup_field popup_button"><a href="#" class="theme_button">Iniciar</a></div>
                 <div class="popup_field forgot_password">
-                    <a href="#">Forgot password?</a>
+                    <a href="#">¿Olvidaste tu clave?</a>
                 </div>
                 <div class="popup_field register">
-                    <a href="#">Register</a>
+                    <a href="#">Registrate</a>
                 </div>
                 <div class="result sc_infobox"></div>
             </form>

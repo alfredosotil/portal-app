@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     @ViewChild("myModalProperty") myModalProperty;
     input = new EventEmitter();
     properties = [];
+    propertiesMainSlider = [];
     model = {};
     isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     ) { }
 
     ngOnInit() {
+        this.initMainSlider();
         this.listProperties();
     }
 
@@ -84,6 +86,14 @@ export class HomeComponent implements OnInit, AfterViewChecked {
             data => this.properties = data,
             error => alert(error),
             () => this.isLoading$.next(false)
+            );
+    }
+    
+    private initMainSlider() {
+        this.ps.getmainslider()
+            .subscribe(
+            data => this.propertiesMainSlider = data,
+            error => alert(error)
             );
     }
 

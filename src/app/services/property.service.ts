@@ -39,6 +39,10 @@ export class PropertyService {
     del(id: string) {
 
     }
-
-
+    
+    getmainslider(){
+        return this.http.get(this.g.getApiRestUrl() + 'api/getmainslider')
+            .map(res => res.json());
+    }
+    
 }
