@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { Ng2MapModule} from 'ng2-map';
-import { Ng2MapComponent } from 'ng2-map';
+//import { Ng2MapComponent } from 'ng2-map';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { GlobalService } from './global.service';
@@ -63,7 +63,7 @@ const appRoutes: Routes = [
         FormsModule,
         HttpModule,
         RouterModule.forRoot(appRoutes), 
-        Ng2MapModule
+        Ng2MapModule.forRoot({apiUrl:'https://maps.google.com/maps/api/js?key=AIzaSyCuHHxRJnJZ3ft03gkqcHyBRZQ13lJnOII'})
     ],
     providers: [
 //        App
@@ -75,6 +75,6 @@ const appRoutes: Routes = [
 })
 export class AppModule { 
     constructor(){
-        Ng2MapComponent['apiUrl'] = 'https://maps.google.com/maps/api/js?key=AIzaSyCuHHxRJnJZ3ft03gkqcHyBRZQ13lJnOII';
+//        Ng2MapComponent['apiUrl'] = 'https://maps.google.com/maps/api/js?key=AIzaSyCuHHxRJnJZ3ft03gkqcHyBRZQ13lJnOII';
     }
 }
