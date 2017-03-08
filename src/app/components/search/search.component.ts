@@ -22,6 +22,8 @@ export class SearchComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.gs.showSearch = true;
+        this.gs.showContactForm = true;
         this.listProperties();
     }
 

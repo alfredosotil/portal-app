@@ -4,10 +4,12 @@
     <!-- socials -->
     <div class="post_info post_info_bottom theme_text">
         <div class="share-social theme_info share-dir-vertical">
-            <span class="share-caption">Share this</span>
+            <span class="share-caption">Comparte esto!</span>
             <a href="#" class="share-item" onclick="trexShareTwitter()" data-count="twitter"><img src="images/socials/twitter.png" alt="twitter"></a>
 
             <a href="#" class="share-item" onclick="trexShareFacebook()" data-count="facebook"><img src="images/socials/facebook.png" alt="facebook"></a>
+            
+            <a href="#" class="share-item" onclick="" data-count="youtube"><img src="images/socials/youtube.png" alt="youtube"></a>
 
             <!--<a href="#" class="share-item" onclick="trexShareGplus()" data-count="gplus"><img src="images/socials/gplus.png" alt="gplus"></a>-->
 
@@ -37,7 +39,7 @@
                 <div id="header_middle_inner">
                     <div class="search_form_area theme_body">
                         <form class="search_form"><input class="search_field" type="search" placeholder="Escribe tu busqueda con palabras claves ..." #inputSearch (keyup)="gs.inputSearch = inputSearch.value" (change)="gs.inputSearch = inputSearch.value" name="s"></form>
-                        <a href="#" class="search_close" (click)="closeSearch()"><span class="icon-cancel-circled"></span></a>
+                        <a href="#" *ngIf="gs.showSearch" class="search_close" (click)="closeSearch()"><span class="icon-cancel-circled"></span></a>
                     </div>
                     <!-- main menu -->
                     <nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
@@ -64,7 +66,7 @@
                                 <a routerLink="/contactus">Contactanos</a>
                             </li>
                         </ul>	
-                        <a href="#" class="search_link" (click)="openSearch()"><span class="icon-search"></span></a>
+                        <a href="#" *ngIf="gs.showSearch" class="search_link" (click)="openSearch()"><span class="icon-search"></span></a>
                     </nav>
                     <!-- #main menu -->
                 </div>
@@ -74,22 +76,27 @@
     </header>
     <router-outlet></router-outlet>
     <footer id="footer" class="site_footer" role="contentinfo">
-        <div id="footer_sidebar" class="widget_area theme_dark theme_article" role="complementary">
+        <div id="footer_sidebar" class="widget_area theme_article" role="complementary">
             <div id="footer_sidebar_inner">
                 <!-- widget socials -->
                 <aside class="widget widget_socials">			
                     <div class="widget_inner">
                         <div class="logo logo_text"><a href="index-2.html">
-                                <span class="logo_title theme_header">Cube<span class="theme_accent">IT</span>.pe</span></a>
+                                <span class="logo_title theme_header">cube<span class="theme_accent">IT</span>.pe</span></a>
                         </div>
                         <div class="logo_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                        <a class="social_icons social_facebook" href="https://www.facebook.com/themerex" target="_blank"><img src="images/socials/facebook.png" alt="" /></a><a class="social_icons social_twitter" href="https://twitter.com/Theme_REX" target="_blank"><img src="images/socials/twitter.png" alt="" /></a><a class="social_icons social_gplus" href="https://plus.google.com/102189073109602153696" target="_blank"><img src="images/socials/gplus.png" alt="" /></a><a class="social_icons social_youtube" href="https://www.youtube.com/channel/UCnFisBimrK2aIE-hnY70kCA" target="_blank"><img src="images/socials/youtube.png" alt="" /></a><a class="social_icons social_pinterest" href="http://themeforest.net/user/ThemeREX/portfolio" target="_blank"><img src="images/socials/pinterest.png" alt="" /></a>		
+                        <a class="social_icons social_twitter" href="https://twitter.com/Theme_REX" target="_blank"><img src="images/socials/twitter.png" alt="" /></a>
+                        <a class="social_icons social_facebook" href="https://www.facebook.com/themerex" target="_blank"><img src="images/socials/facebook.png" alt="" /></a>
+                        <!--<a class="social_icons social_gplus" href="https://plus.google.com/102189073109602153696" target="_blank"><img src="images/socials/gplus.png" alt="" /></a>-->
+                        <a class="social_icons social_youtube" href="https://www.youtube.com/channel/UCnFisBimrK2aIE-hnY70kCA" target="_blank"><img src="images/socials/youtube.png" alt="" /></a>
+                        <a class="social_icons social_linkedin" href="https://www.youtube.com/channel/UCnFisBimrK2aIE-hnY70kCA" target="_blank"><img src="images/socials/linkedin.png" alt="" /></a>
+                        <!--<a class="social_icons social_pinterest" href="http://themeforest.net/user/ThemeREX/portfolio" target="_blank"><img src="images/socials/pinterest.png" alt="" /></a>-->		
                     </div>
                 </aside>
                 <!-- #widget socials -->
                 <!-- widget flickr -->
                 <aside class="widget widget_flickr">
-                    <h3 class="widget_title theme_title">Flickr</h3>		
+<!--                    <h3 class="widget_title theme_title">Flickr</h3>		
                     <div class="flickr_images">
                         <a href="#"><img title="" alt="A photo on Flickr" src="images/thumbs/flickr_thumb1.jpg"></a>
                         <a href="#"><img title="" alt="A photo on Flickr" src="images/thumbs/flickr_thumb2.jpg"></a>
@@ -101,12 +108,12 @@
                         <a href="#"><img title="" alt="A photo on Flickr" src="images/thumbs/flickr_thumb8.jpg"></a>
                         <a href="#"><img title="" alt="A photo on Flickr" src="images/thumbs/flickr_thumb9.jpg"></a>
                         <a href="#"><img title="" alt="A photo on Flickr" src="images/thumbs/flickr_thumb10.jpg"></a>
-                    </div>
+                    </div>-->
                 </aside>
                 <!-- widget #flickr -->
                 <!-- widget recent post -->
                 <aside class="widget widget_recent_entries widget-odd">		
-                    <h3 class="widget_title theme_title">Recent posts</h3>		
+                    <h3 class="widget_title theme_title">Enlaces de ayuda</h3>		
                     <ul>
                         <li><a href="single-format-standard.html">Ripd</a></li>
                         <li><a href="single-format-gallery.html">Star Trek Into Darkness</a></li>
@@ -119,15 +126,15 @@
                 </aside>
                 <!-- #widget recent post -->
                 <!-- widget contact form -->
-                <aside class="widget widget_text">
-                    <h3 class="widget_title theme_title">Contact form</h3>			
+                <aside *ngIf="gs.showContactForm" class="widget widget_text">
+                    <h3 class="widget_title theme_title">Escribenos!</h3>			
                     <div class="textwidget">
                         <div class="sc_contact_form">
                             <form method="post" action="http://cubeit.pe/sendmail.php">
-                                <div class="field field_name"><input type="text" id="sc_contact_form_username" name="username" placeholder="Your Name*"></div>
-                                <div class="field field_email"><input type="text" id="sc_contact_form_email" name="email" placeholder="Your Email*"></div>
-                                <div class="field field_message"><textarea id="sc_contact_form_message" name="message" placeholder="Your Message*"></textarea></div>
-                                <div class="sc_contact_form_button"><a href="#" class="sc_contact_form_submit theme_button"><span>Send</span></a></div>
+                                <div class="field field_name"><input type="text" id="sc_contact_form_username" name="username" placeholder="Tu Nombre*"></div>
+                                <div class="field field_email"><input type="text" id="sc_contact_form_email" name="email" placeholder="Tu Email*"></div>
+                                <div class="field field_message"><textarea id="sc_contact_form_message" name="message" placeholder="Tu Mensaje*"></textarea></div>
+                                <div class="sc_contact_form_button"><a href="#" class="sc_contact_form_submit theme_button"><span>Enviar</span></a></div>
                                 <div class="result sc_infobox"></div>
                             </form>
                         </div>
@@ -137,9 +144,9 @@
             </div>
         </div>
         <!-- footer_copyright -->
-        <div id="footer_copyright" class="theme_dark theme_article">
+        <div id="footer_copyright" class="theme_article">
             <div id="footer_copyright_inner" class="theme_text">
-                <a href="http://cubeit.pe">CubeIT</a> &copy; 2013 All Rights Reserved 			
+                <a href="http://cubeit.pe">cubeIT</a> &copy; 2013 Todos los derechos reservados. 			
             </div>
         </div>
         <!-- #footer_copyright -->
@@ -167,18 +174,18 @@
 
     <div id="popup_register" class="popup_form">
         <div class="popup_body theme_article">
-            <h4 class="popup_title">Registration</h4>
+            <h4 class="popup_title">Registro</h4>
             <form action="#" method="post" name="register_form">
-                <div class="popup_field"><input type="text" name="registration_username" id="registration_username" placeholder="Your name (login)*" /></div>
-                <div class="popup_field"><input type="text" name="registration_email" id="registration_email" placeholder="Your email*" /></div>
-                <div class="popup_field"><input type="password" name="registration_pwd" id="registration_pwd" placeholder="Your Password*" /></div>
-                <div class="popup_field"><input type="password" name="registration_pwd2" id="registration_pwd2" placeholder="Confirm Password*" /></div>
-                <div class="popup_field theme_info registration_role"><p>Desired role:</p>
-                    <input type="radio" name="registration_role" id="registration_role1" value="1" checked="checked" /><label for="registration_role1">Subscriber</label>
-                    <input type="radio" name="registration_role" id="registration_role2" value="2" /><label for="registration_role2">Author</label>
+                <div class="popup_field"><input type="text" name="registration_username" id="registration_username" placeholder="Tu Nombre*" /></div>
+                <div class="popup_field"><input type="text" name="registration_email" id="registration_email" placeholder="Tu Email (login)*" /></div>
+                <div class="popup_field"><input type="password" name="registration_pwd" id="registration_pwd" placeholder="Tu Clave*" /></div>
+                <div class="popup_field"><input type="password" name="registration_pwd2" id="registration_pwd2" placeholder="Confirmar Clave*" /></div>
+                <div class="popup_field theme_info registration_role"><p>Elegir Perfil:</p>
+                    <input type="radio" name="registration_role" id="registration_role1" value="1" checked="checked" /><label for="registration_role1">Subscriptor</label><br>
+                    <input type="radio" name="registration_role" id="registration_role2" value="2" /><label for="registration_role2">Administrador</label>
                 </div>
-                <div class="popup_field registration_msg_area"><textarea name="registration_msg" id="registration_msg" placeholder="Your message"></textarea></div>
-                <div class="popup_field popup_button"><a href="#" class="theme_button">Register</a></div>
+                <div class="popup_field registration_msg_area"><textarea name="registration_msg" id="registration_msg" placeholder="Tu Mensaje"></textarea></div>
+                <div class="popup_field popup_button"><a href="#" class="theme_button">Registrar</a></div>
                 <div class="result sc_infobox"></div>
             </form>
         </div>

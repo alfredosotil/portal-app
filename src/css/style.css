@@ -2705,7 +2705,7 @@ article ul li:before,
     display:none;
 }
 .popup_form .popup_field textarea {
-    width:196px;
+    width:160px;
     height:80px;
     padding: 0 0 0 2px;
 }

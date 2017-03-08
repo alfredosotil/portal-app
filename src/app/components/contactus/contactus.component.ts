@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from 'app/global.service';
 
 @Component({
   selector: 'app-contactus',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  private gs: GlobalService
+  ) { }
 
   ngOnInit() {
+      this.gs.showSearch = false;
+      this.gs.showContactForm = false;
   }
 
 }

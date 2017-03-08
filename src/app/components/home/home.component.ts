@@ -28,6 +28,8 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     ) { }
 
     ngOnInit() {
+        this.gs.showSearch = true;
+        this.gs.showContactForm = true;
         this.initMainSlider();
         this.listProperties();
     }

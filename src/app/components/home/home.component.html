@@ -1,5 +1,5 @@
 <div id="main" class="without_sidebar">   
-    <div class="ui modal">        
+    <div class="ui large modal">        
         <div class="header">
             <h2>
                 <i class="home icon"></i>
@@ -18,10 +18,7 @@
                                 <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">{{model?.type?.type}}</div>
                                 <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
                                     <div class="criteria_summary criteria_row">
-                                        <span class="criteria_stars" title="4.6 from 5">
-                                            <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                            <span class="stars_on" data-review="92"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                        </span>
+                                        <div class="ui massive star rating" [attr.data-rating]="model?.priority" [attr.data-max-rating]="5"></div>
                                     </div>
                                 </div>
                                 <h2 class="sc_slider_subtitle">
@@ -61,12 +58,16 @@
             </div>
         </div>
         <div class="actions">
-            <div class="ui black deny button">
-                Cerrar
+            <div class="ui blue right labeled icon button">
+                Ver Contacto
+                <i class="call icon"></i>
             </div>
             <div class="ui positive right labeled icon button">
                 Ver Propiedad
                 <i class="checkmark icon"></i>
+            </div>
+            <div class="ui black deny button">
+                Cerrar
             </div>
         </div>
     </div>   
@@ -82,17 +83,13 @@
                                 <div class="sc_slider_category theme_accent_bg" data-categoryiconbg="00a0db">{{pms.type.type}}</div>
                                 <div class="sc_slider_reviews reviews_summary blog_reviews after_category">
                                     <div class="criteria_summary criteria_row">
-                                        <span class="criteria_stars" title="4.6 from 5">
-                                            <span class="stars_off"><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span><span class="theme_stars"></span></span>
-                                            <span class="stars_on" data-review="92"><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span><span class="theme_stars theme_stars_on"></span></span>
-                                        </span>
+                                        <div class="ui massive star rating" [attr.data-rating]="pms.priority" [attr.data-max-rating]="5"></div>
                                     </div>
                                 </div>
                                 <h2 class="sc_slider_subtitle">
-                                    <a href="single-format-quote.html">En {{pms.state.state}}</a>
+                                    <a href="single-format-quote.html">En {{pms.state.state}} - {{pms.price | currency:getCurrency(pms.money):true:'3.2-2'}}</a>
                                 </h2>
                                 <div class="sc_slider_descr">
-                                    <p>{{pms.price | currency:getCurrency(pms.money):true:'3.2-2'}}</p>
                                     {{pms.description | truncate: [300]}}
                                 </div>
                             </div>
@@ -141,7 +138,6 @@
                                             <h2 class="post_subtitle"><a href="single-format-gallery.html">{{p.state.state}}</a></h2>
                                             <div class="reviews_summary blog_reviews theme_puzzles">
                                                 <div class="criteria_summary criteria_row">
-                                                    <!--<sm-rating class="massive star" [initialRating]="p.priority" [maxRating]="5" #rating></sm-rating>-->
                                                     <div class="ui massive star rating" [attr.data-rating]="p.priority" [attr.data-max-rating]="5"></div>
                                                 </div>
                                             </div>
